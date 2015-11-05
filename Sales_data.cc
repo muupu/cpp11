@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+Sales_data::Sales_data(std::istream &is)
+{
+	read(is, *this); // 从is中读取一条交易信息然后存入this对象中
+}
+
 double Sales_data::avg_price() const
 {
 	if (units_sold)
