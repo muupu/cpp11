@@ -2,6 +2,11 @@
 
 class Sales_data
 {
+// 友元中可以访问该类中的非public成员
+friend Sales_data add(const Sales_data&, const Sales_data&); 
+friend std::ostream &print(std:ostream&, const Sales_data&);
+friend std::istream &read(std::istream&, Sales_data& item); // read函数实现里面就可以使用item.units_sold
+
 public:
 	// 构造函数
 	Sales_data() = default; // 默认构造函数
