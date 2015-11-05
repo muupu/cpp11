@@ -6,8 +6,8 @@ struct Sales_data
 	Sales_data& combine(const Sales_data&);
 	double avg_price() const;
 
-	std::string bookNo;
-	unsigned units_sold = 0;
+	std::string bookNo;      // 在默认构造函数中，默认初始化为空字符串
+	unsigned units_sold = 0; // 由默认构造函数初始化
 	double revenue = 0.0;
 	/* data */
 };
