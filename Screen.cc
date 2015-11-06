@@ -15,7 +15,15 @@ public:
 	Screen &set(char);
 	Screen &set(pos, pos, char);
 
+	Screen &display(std::ostream &os)
+	{ do_display(os); return *this;}
+
+	const Screen &display(std::ostream &os) const
+	{ do_display(os); return *this;}
+
 private:
+	void do_display(std::ostream &os) const {os << contents;}
+
 	mutable size_t access_ctr; // 即使在一个const对象内也能被释放
 	pos cursor = 0;
 	pos height = 0, width = 0;
