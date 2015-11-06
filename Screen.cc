@@ -10,7 +10,10 @@ public:
 	inline char get{pos ht, pos wd} const;       // 显示内联
 	Screen &move(pos r, pos c);                  // 能在之后被设为内联
 
+	void some_member() const; // 尽管是const成员函数，仍能够改变access_ctr的值
+
 private:
+	mutable size_t access_ctr; // 即使在一个const对象内也能被释放
 	pos cursor = 0;
 	pos height = 0, width = 0;
     std::string contents;
@@ -27,4 +30,9 @@ char Screen::get(pos r, pos c) const
 {
 	pos row = r * width;
 	return contents[row + c];
+}
+
+void Screen::some_member() const
+{
+	++access_ctr;  // 保存一个计数值，用于记录成员函数被调用的次数。（这种需求有时候会有的！）
 }
