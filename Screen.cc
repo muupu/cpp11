@@ -21,7 +21,8 @@ public:
 	const Screen &display(std::ostream &os) const
 	{ do_display(os); return *this;}
 
-	friend class Window_mgr; // Window_mgr的成员可以访问Screen类的私有部分
+	// friend class Window_mgr; // Window_mgr的成员可以访问Screen类的私有部分
+	friend void Window_mgr::clear(ScreenIndex); // Window_mgr::clear必须在Screen类之前被声明
 
 private:
 	void do_display(std::ostream &os) const {os << contents;}
