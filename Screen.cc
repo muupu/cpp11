@@ -12,6 +12,9 @@ public:
 
 	void some_member() const; // 尽管是const成员函数，仍能够改变access_ctr的值
 
+	Screen &set(char);
+	Screen &set(pos, pos, char);
+
 private:
 	mutable size_t access_ctr; // 即使在一个const对象内也能被释放
 	pos cursor = 0;
@@ -36,3 +39,17 @@ void Screen::some_member() const
 {
 	++access_ctr;  // 保存一个计数值，用于记录成员函数被调用的次数。（这种需求有时候会有的！）
 }
+
+
+inline Screen &Screen::set(char c)
+{
+	contents[cursor] = c;
+	return *this;
+}
+
+inline Screen &Screen::set(pos r, pos col, char ch)
+{
+	contents[r*width + col] = ch;
+	return *this;
+}
+
