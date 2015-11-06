@@ -17,5 +17,8 @@ class X {
 public:
 	// 成员的初始化顺序与它们在类中的定义顺序一致
 	// 因此以下会先用未初始化的j来初始化i，再初始化j
-	X(int val): j(val), i(j) { }
+	// X(int val): j(val), i(j) { }
+	
+	// 正确版本：与i，j声明的顺序保持一致
+	X(int val): i(val), j(val) { }
 }
