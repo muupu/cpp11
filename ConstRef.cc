@@ -10,3 +10,12 @@ private:
 };
 
 ConstRef::ConstRef(int ii): i(ii), ci(ii), ri(i) { } //显示地初始化引用和常量
+
+class X {
+	int i;
+	int j;
+public:
+	// 成员的初始化顺序与它们在类中的定义顺序一致
+	// 因此以下会先用未初始化的j来初始化i，再初始化j
+	X(int val): j(val), i(j) { }
+}
