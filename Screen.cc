@@ -40,7 +40,9 @@ void Screen::some_member() const
 	++access_ctr;  // 保存一个计数值，用于记录成员函数被调用的次数。（这种需求有时候会有的！）
 }
 
-
+// 返回*this，返回的是对象本身
+// 这样就能将一系列操作连接在一条表达式中！
+// 例如：myScreen.move(4, 0).set('#') --- 将光标move到指定位置(4, 0)，然后设置该位置的字符值('#')
 inline Screen &Screen::set(char c)
 {
 	contents[cursor] = c;
