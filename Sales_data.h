@@ -15,6 +15,13 @@ public:
 	           bookNo(s), units_sold(n), revenue(p*n) {}
 	Sales_data(std::istream &);
 
+	// 使用默认实参的构造函数
+	Sales_data(std::string s = ""): bookNo(s) { }  
+	Sales_data(std::string s, unsigned cnt, double rev):
+	           bookNo(s), units_sold(cnt), revenue(rev*cnt) { }
+	Sales_data(std::istream &is) { read(is, *this); }
+	
+public:
 	std::string isbn() const {return bookNo;}
 	Sales_data& combine(const Sales_data&);
 	double avg_price() const;
