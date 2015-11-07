@@ -67,4 +67,14 @@ int main()
 	{
 		cerr << "No data?!" << endl;
 	}
+
+	// 隐式的类类型转换
+	// 接受string的构造函数定义了从string类型向Sales_data隐式转换的规则（注意是由构造函数来定义这种规则）
+	string null_book = "9-99-9999";
+	// 编译器通过string类型的null_book构造一个临时的Sales_data对象
+	// 该对象的units_sold和revenue等于0， bookNo等于null_book
+	total.combine(null_book);  
+
+	// 只允许一步类类型转换
+	// total.combine("9-99-9999");  // 是错的，先转成string，再转成Sales_data
 }
