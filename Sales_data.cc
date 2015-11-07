@@ -77,4 +77,8 @@ int main()
 
 	// 只允许一步类类型转换
 	// total.combine("9-99-9999");  // 是错的，先转成string，再转成Sales_data
+
+	// explicit构造函数只能用于直接初始化
+	// Sales_data item = null_book; // 不能用于拷贝形式的初始化过程
+	Sales_data item(null_book); // 只能像这样直接初始化
 }

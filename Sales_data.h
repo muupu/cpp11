@@ -14,6 +14,7 @@ public:
 	           bookNo(s), units_sold(n), revenue(p*n) {}
 	// 添加explicit阻止构造函数定义的隐式转换
 	// explicit只对一个实参的构造函数有效。因为需要多个实参的构造函数不能用于执行隐式转换。
+	// 只能在类内使用explicit，在类外部定义时不应重复
 	explicit Sales_data(const std::string &s) : bookNo(s) {}  // 构造函数初始值列表
 	explicit Sales_data(std::istream &);
 
