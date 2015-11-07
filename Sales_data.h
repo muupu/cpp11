@@ -10,10 +10,12 @@ friend std::istream &read(std::istream&, Sales_data& item); // read函数实现�
 public:
 	// 构造函数
 	Sales_data() = default; // 默认构造函数
-	Sales_data(const std::string &s) : bookNo(s) {}  // 构造函数初始值列表
 	Sales_data(const std::string &s, unsigned n, double p):
 	           bookNo(s), units_sold(n), revenue(p*n) {}
-	Sales_data(std::istream &);
+	// 添加explicit阻止构造函数定义的隐式转换
+	// explicit只对一个实参的构造函数有效。因为需要多个实参的构造函数不能用于执行隐式转换。
+	explicit Sales_data(const std::string &s) : bookNo(s) {}  // 构造函数初始值列表
+	explicit Sales_data(std::istream &);
 
 	// 使用默认实参的构造函数
 	Sales_data(std::string s = ""): bookNo(s) { }  
