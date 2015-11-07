@@ -31,3 +31,11 @@ void Account::rate(double newRate)
 // 类似全局变量，一旦被定义，就将一直存在于程序的整个生命周期中
 // 从类名Account开始，剩余部分就都位于类的作用域内
 double Account::interestRate = initRate(); // 虽然initRate是私有的，也能直接使用initRate初始化interestRate
+
+class Bar {
+public:
+private:
+	static Bar meml;  // 静态成员可以是不完全类型
+	Bar *mem2;        // 指针或引用可以是不完全类型
+	// Bar mem3;      // 错误：数据成员必须是完全类型
+}
