@@ -81,4 +81,8 @@ int main()
 	// explicit构造函数只能用于直接初始化
 	// Sales_data item = null_book; // 不能用于拷贝形式的初始化过程
 	Sales_data item(null_book); // 只能像这样直接初始化
+
+	// 
+	item.combine(static_cast<Sales_data>(cin));
+
 }
