@@ -20,6 +20,11 @@ public:
 	Sales_data(std::string s, unsigned cnt, double rev):
 	           bookNo(s), units_sold(cnt), revenue(rev*cnt) { }
 	Sales_data(std::istream &is) { read(is, *this); }
+
+	// 委托构造函数
+	Sales_data():Sales_data("", 0, 0) { }
+	Sales_data(std::string s):Sales_data(s, 0, 0) { }
+	Sales_data(std::istream &is):Sales_data() { read(is, *this);}
 	
 public:
 	std::string isbn() const {return bookNo;}
