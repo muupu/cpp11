@@ -21,6 +21,9 @@ public:
 	const Screen &display(std::ostream &os) const
 	{ do_display(os); return *this;}
 
+	// 可以使用静态成员作为默认实参
+	Screen& clear(char = bkground);
+
 	// friend class Window_mgr; // Window_mgr的成员可以访问Screen类的私有部分
 	friend void Window_mgr::clear(ScreenIndex); // Window_mgr::clear必须在Screen类之前被声明
 
@@ -31,6 +34,8 @@ private:
 	pos cursor = 0;
 	pos height = 0, width = 0;
     std::string contents;
+
+    static const char bkground;
 };
 
 inline Screen &Screen::move(pos r, pos c)
