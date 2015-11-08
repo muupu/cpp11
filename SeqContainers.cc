@@ -47,7 +47,13 @@ int main()
     // int cpy[10] = digs;  // 错误：内置数组不支持拷贝或赋值
     array<int, 10> digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     array<int, 10> copy = digits;  // 正确：只要数组类型匹配即合法
-    
+
+    // 容器赋值运算：assign操作
+    // assign允许我们从过一个不同但相容的类型赋值，或者从容器的一个子序列赋值
+    list<string> names;
+    vector<const char*> oldstyle;
+    // names = oldstyle;  // 错误：容器类型不匹配
+    names.assign(oldstyle.cbegin, oldstyle.cend()); // 正确：可以将const char* 转换为string
 
 
 	return 0;
