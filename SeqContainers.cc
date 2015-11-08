@@ -22,5 +22,11 @@ int main()
 	auto it3 = authors.cbegin();  // 返回const迭代器
 	auto it4 = authors.crbegin(); 
 
+	// 与顺序容器大小相关的构造函数
+	vector<int> ivec(10, -1);     // 10个-1
+	list<string> svec(10, "hi!")  // 10个string
+	forward_list<int> ivec2(10);  // 10个0
+	deque<string> svec2(10);      // 10个空string
+
 	return 0;
 }
