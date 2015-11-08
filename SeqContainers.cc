@@ -37,6 +37,10 @@ int main()
 	array<int ,10>::size_type i;  // 正确
 	arrar<int>::size_type j;      // 错误：没有指定大小
 
+    // array初始化
+    array<int, 10> ia1;  // 10个默认初始化的int
+    array<int ,10> ia2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};  // 列表初始化
+    array<int, 10> ia3 = {42};  // ia3[0]为42, 剩余元素为0（进行了值初始化）
 
 
 	return 0;
