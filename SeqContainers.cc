@@ -3,6 +3,7 @@
 #include <deque>
 #include <forward_list>
 #include <array>
+#include <utility> // std::swap
 
 using namespace std;
 
@@ -13,6 +14,18 @@ void usingswap()
 	vector<string> svec2(24);  // 24个元素
 	swap(svec1, svec2);        // 交换操作很快（除了array）,swap并未交换元素本身
 	                           // 只是交换了两个容器的内部数据结构
+
+	// swap例子 
+	int x=10, y=20;                  // x:10 y:20
+	swap(x,y);                  // x:20 y:10
+
+	int foo[4];                      // foo: ?  ?  ?  ?
+	int bar[] = {10,20,30,40};       // foo: ?  ?  ?  ?    bar: 10 20 30 40
+	swap(foo,bar);              // foo: 10 20 30 40   bar: ?  ?  ?  ?
+
+	cout << "foo contains:";
+	for (int i: foo) cout << ' ' << i;
+	cout << '\n';
 }
 
 int main()
