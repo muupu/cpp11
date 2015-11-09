@@ -55,6 +55,9 @@ int main()
     // names = oldstyle;  // 错误：容器类型不匹配
     names.assign(oldstyle.cbegin, oldstyle.cend()); // 正确：可以将const char* 转换为string
 
+    // assign第二个版本
+    list<string> slist1(1);   // 1个元素，为空string
+    slist1.assign(10, "Hiya"); // 替换容器中原有的元素：10个元素，每个都是"Hiya"
 
 	return 0;
 }
