@@ -39,6 +39,10 @@ void relationalOperators()
 	v1 < v3;  // false
 	v1 == v4; // true：容器大小相等，且每个元素都相等
 	v1 == v2; // false
+
+	// 这种比较需要其元素定义了相应的比较运算符
+	// vector<Sales_data> storeA, storeB;
+	// if (storeA < storeB) // 错误：Sales_data没有定义<运算符
 }
 
 int main()
