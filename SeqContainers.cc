@@ -6,6 +6,15 @@
 
 using namespace std;
 
+// swap用来交换两个相同类型容器的内容
+void usingswap()
+{
+	vector<string> svec1(10);  // 10个元素
+	vector<string> svec2(24);  // 24个元素
+	swap(svec1, svec2);        // 交换操作很快（除了array）,swap并未交换元素本身
+	                           // 只是交换了两个容器的内部数据结构
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
@@ -58,6 +67,7 @@ int main()
     // assign第二个版本
     list<string> slist1(1);   // 1个元素，为空string
     slist1.assign(10, "Hiya"); // 替换容器中原有的元素：10个元素，每个都是"Hiya"
+
 
 	return 0;
 }
