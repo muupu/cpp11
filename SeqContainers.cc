@@ -28,6 +28,19 @@ void usingswap()
 	cout << '\n';
 }
 
+void relationalOperators()
+{
+	vector<int> v1 = { 1, 3, 5, 7, 9, 12 };
+	vector<int> v2 = { 1, 3, 9 };
+	vector<int> v3 = { 1, 3, 5, 7 };
+	vector<int> v4 = { 1, 3, 5, 7, 9, 12 };
+
+	v1 < v2;  // true：在[2]处不相等，且v1[2]小于等于v2[2]
+	v1 < v3;  // false
+	v1 == v4; // true：容器大小相等，且每个元素都相等
+	v1 == v2; // false
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
