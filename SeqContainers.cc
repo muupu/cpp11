@@ -75,6 +75,13 @@ void capacity()
 	// size为51，capacity会大于等于51
 	cout << "ivec: size: " << ivec.size()
 		 << " capacity: "  << ivec.capacity() << endl;
+
+    // 将超出当前大小的多余内存退回给系统
+	ivec.shrink_to_fit();
+	// size不会改变，capacity的改变依赖于具体实现
+	// shrink_to_fit只是一个请求，不保证一定退还内存
+	cout << "ivec: size: " << ivec.size()
+	<< " capacity: "  << ivec.capacity() << endl;
 }
 
 int main()
