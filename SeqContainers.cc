@@ -84,6 +84,20 @@ void capacity()
 	<< " capacity: "  << ivec.capacity() << endl;
 }
 
+void moreStringOperations
+{
+	const char *cp = "Hello world";
+	char noNull[] = {'H', 'i'};
+	string s1(cp);        // 构造string：直到遇到空字符
+	string s2(noNull, 2); // 从noNull拷贝两个字符
+	// string s3(noNull);    // 错误
+	string s4(cp + 6, 5); // 从cp[6]开始拷贝5个字符
+	string s5(s1, 6, 5);  // 从s1[6]开始拷贝5个字符
+	string s6(s1, 6);     // 从s1[6]开始拷贝，直到s1末尾
+	string s7(s1, 6, 20); // 正确：只会拷贝到s1末尾
+	// string s8(s1, 16);    // 抛出一个out_of_range异常
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
