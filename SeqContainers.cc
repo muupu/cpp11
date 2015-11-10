@@ -45,6 +45,14 @@ void relationalOperators()
 	// if (storeA < storeB) // 错误：Sales_data没有定义<运算符
 }
 
+void capacity()
+{
+	vector<int> ivec;
+	cout << "ivec: size: " << ivec.size()
+	     << "capacity: "   << ivec.capacity()
+	     << endl;
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
