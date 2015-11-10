@@ -51,6 +51,18 @@ void capacity()
 	cout << "ivec: size: " << ivec.size()     // 已经保存的元素的数目
 	     << "capacity: "   << ivec.capacity() // 不重新分配内存空间的话，最多可以保存多少个元素
 	     << endl;
+
+	for (vector<int>::size_type ix = 0; ix != 24; ++ix)
+		ivec.push_back(ix);
+	// 添加24个元素后，size为24；capacity会大于等于24
+	cout << "ivec: size: " << ivec.size()
+		 << " capacity: "  << ivec.capacity() << endl;
+
+	// 预分配一些额外空间
+    ivec.reserve(50);
+    // size为24，capacity会大于等于50
+    cout << "ivec: size: " << ivec.size()
+		 << " capacity: "  << ivec.capacity() << endl;
 }
 
 int main()
