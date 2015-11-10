@@ -63,6 +63,18 @@ void capacity()
     // size为24，capacity会大于等于50
     cout << "ivec: size: " << ivec.size()
 		 << " capacity: "  << ivec.capacity() << endl;
+
+    // 添加元素用光多余容量
+	while (ivec.size() != ivec.capacity())
+		ivec.push_back(0);
+	cout << "ivec: size: " << ivec.size()
+	<< " capacity: "  << ivec.capacity() << endl;
+
+	// 再添加一个元素，vector会重新分配内存空间
+	ivec.push_back(42);
+	// size为51，capacity会大于等于51
+	cout << "ivec: size: " << ivec.size()
+		 << " capacity: "  << ivec.capacity() << endl;
 }
 
 int main()
