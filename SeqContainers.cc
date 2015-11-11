@@ -97,13 +97,17 @@ void moreStringOperations
 	string s7(s1, 6, 20); // 正确：只会拷贝到s1末尾
 	// string s8(s1, 16);    // 抛出一个out_of_range异常
 
-	string s11("hello world");
+	string s("hello world");
 	string s12 = s.substr(0, 5);
 	string s13 = s.substr(6);
 	string s14 = s.substr(6, 11);
 	string s15 = s.substr(12);  // 抛出一个out_of_range异常
 
-	
+	s.insert(s.size(), 5, '!');
+	s.erase(s.size() - 5, 5); //删除s最后5个字符
+
+	s.assign(cp, 7);
+	s.insert(s.size(), cp + 7);
 }
 
 int main()
