@@ -108,6 +108,11 @@ void moreStringOperations
 
 	s.assign(cp, 7);
 	s.insert(s.size(), cp + 7);
+
+	s.append(" C++");
+	s.insert(s.size(), " C++");
+	s.replace(5, 3, "CPP");
+	s.replace(5, 3, "CPP11");
 }
 
 int main()
