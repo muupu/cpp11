@@ -130,6 +130,10 @@ void stringSearch()
 	// 查找与给定字符串中任何一个字符匹配的位置
 	string numbers("0123456789"), name("r2d2");
 	auto pos = name.find_first_of(numbers);
+
+	// 搜索第一个不在参数中的字符
+	strign dept("03714p3");
+	auto pos = dept.find_first_not_of(numbers);
 }
 
 int main()
