@@ -161,6 +161,17 @@ void stringNumConv()
 	d = stod(s2.substr(s2.find_first_of("+-.0123456789")));
 }
 
+void containerAdaptor()
+{
+	// 定义一个适配器
+	stack<int> stk(deq); // 从deq拷贝元素到stk
+
+	// 在vector上实现的空栈
+	stack<string, vector<string>> str_stk;
+    // str_stk2在vector上实现，初始化时保存svec的拷贝
+    stack<string, vector<string>> str_stk2(svec);
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
