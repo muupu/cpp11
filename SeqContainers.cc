@@ -115,6 +115,15 @@ void moreStringOperations
 	s.replace(5, 3, "CPP11");
 }
 
+void stringSearch()
+{
+	// find
+	// 返回的是string::size_type，是个unsigned类型
+	// 若搜索失败，返回一个string::npos的static成员
+	string name("AnnaBelle");
+	auto pos1 = name.find("Anna"); // pos1 == 0
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
