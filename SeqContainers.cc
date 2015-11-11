@@ -150,6 +150,17 @@ void stringSearch()
 	auto last_pos = river.rfind("is");
 }
 
+void stringNumConv()
+{
+	int i = 42;
+	string s = to_string(i);
+	double d = stod(s);
+
+	// 要转换为数值的string中，第一个非空白字符必须是数值中可能出现的字符
+	string s2 = "pi = 3.14";
+	d = stod(s2.substr(s2.find_first_of("+-.0123456789")));
+}
+
 int main()
 {
 	list<string> authors = {"Milton", "Shakespeare", "Austen"};
