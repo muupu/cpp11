@@ -122,6 +122,14 @@ void stringSearch()
 	// 若搜索失败，返回一个string::npos的static成员
 	string name("AnnaBelle");
 	auto pos1 = name.find("Anna"); // pos1 == 0
+
+	// find是大小写敏感的
+	string lowercase("annabelle");
+	pos1 = lowercase.find("Anna"); // pos1 == npos
+
+	// 查找与给定字符串中任何一个字符匹配的位置
+	string numbers("0123456789"), name("r2d2");
+	auto pos = name.find_first_of(numbers);
 }
 
 int main()
