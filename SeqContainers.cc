@@ -134,6 +134,15 @@ void stringSearch()
 	// 搜索第一个不在参数中的字符
 	strign dept("03714p3");
 	auto pos = dept.find_first_not_of(numbers);
+
+	// 指定在哪里开始搜索
+	string::size_type pos = 0;
+	while ((pos = name.find_first_of(numbers, pos)) != string::npos)
+	{
+		cout << "found number at index: " << pos
+		     << " element is " << name[pos] << endl;
+		++pos;
+	}
 }
 
 int main()
