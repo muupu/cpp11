@@ -143,6 +143,11 @@ void stringSearch()
 		     << " element is " << name[pos] << endl;
 		++pos;
 	}
+
+	// rfind
+	string river("Mississippi");
+	auto first_pos = river.find("is");
+	auto last_pos = river.rfind("is");
 }
 
 int main()
