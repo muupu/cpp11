@@ -3,6 +3,7 @@
 #include <deque>
 #include <forward_list>
 #include <array>
+#include <stack>
 #include <utility> // std::swap
 
 using namespace std;
@@ -170,6 +171,16 @@ void containerAdaptor()
 	stack<string, vector<string>> str_stk;
     // str_stk2在vector上实现，初始化时保存svec的拷贝
     stack<string, vector<string>> str_stk2(svec);
+
+    // 栈适配器
+    stack<int> intStack;
+    for (size_t ix = 0; ix != 10; ++ix)
+    	intStack.push(ix);
+    while (!intStack.empty())
+    {
+    	int value  = intStack.top();
+    	intStack.pop();
+    }
 }
 
 int main()
