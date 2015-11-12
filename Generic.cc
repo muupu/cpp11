@@ -1,4 +1,11 @@
 #include <algorithm>
+#include <numeric>
+
+void readOnlyAlgorithm()
+{
+	// accumulate(第三个参数是和的初值)
+	int sum = accumulate(vec.cbegin(), vec.cend(), 0);
+}
 
 int main()
 {
