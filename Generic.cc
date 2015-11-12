@@ -18,6 +18,13 @@ void readOnlyAlgorithm()
 	equal(roster1.cbegin(), roster2.cend(), roster2.cbegin());
 }
 
+void writeAlgorithm()
+{
+	// fill
+	fill(vec.begin(), vec.end(), 0); // 将每个元素重置为0
+	fill(vec.begin(), vec.begin() + vec.size()/2, 10); // 子序列设置为10
+}
+
 int main()
 {
 	// find操作的是迭代器，因此find可以在任何容器中查找值
