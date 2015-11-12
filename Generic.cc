@@ -23,6 +23,13 @@ void writeAlgorithm()
 	// fill
 	fill(vec.begin(), vec.end(), 0); // 将每个元素重置为0
 	fill(vec.begin(), vec.begin() + vec.size()/2, 10); // 子序列设置为10
+
+	// 算法不检查写操作
+	// fill_n：将给定值赋予迭代器指向的元素开始的指定个元素
+	vector<int> vec;
+	fill_n(vec.begin(), vec.size(), 0); // 正确：因为是空vector，所以vec.size()个数为0
+	// fill_n(vec.begin(), 10, 0)       // 错误：修改vec（是个空vector）中不存在的元素
+
 }
 
 int main()
