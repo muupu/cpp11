@@ -12,4 +12,7 @@ int main()
 	int val2 = 83;
 	// 使用标准库begin和end来获得指向ia的首元素和尾元素之后位置的指针
 	int *result2 = find(begin(ia), end(ia), val);
+
+	// 在序列的子范围查找
+	auto result3 = find(ia + 1, ia + 4, val);
 }
