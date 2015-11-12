@@ -12,6 +12,10 @@ void readOnlyAlgorithm()
 	// 注意第三个参数显示地创建一个string。若直接传递一个字符串字面值是错误的
 	// 因为const char*上没有定义+运算符
 	// 错误：string num = accumulate(vec.cbegin(), vec.cend(), "");
+
+	// equal（接受三个参数）
+	// 第三个参数表示第二个序列的首元素
+	equal(roster1.cbegin(), roster2.cend(), roster2.cbegin());
 }
 
 int main()
