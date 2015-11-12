@@ -5,6 +5,13 @@ void readOnlyAlgorithm()
 {
 	// accumulate(第三个参数是和的初值)
 	int sum = accumulate(vec.cbegin(), vec.cend(), 0);
+
+	// accumulate蕴含的假设：序列中元素类型必须与第三个参数匹配（或者能够转换）
+	// 初始时是空字符串
+	string sum = accumulate(v.cbegin(), v.cend(), string(""));
+	// 注意第三个参数显示地创建一个string。若直接传递一个字符串字面值是错误的
+	// 因为const char*上没有定义+运算符
+	// 错误：string num = accumulate(vec.cbegin(), vec.cend(), "");
 }
 
 int main()
