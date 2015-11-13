@@ -40,6 +40,11 @@ void backInserter()
 	auto it = back_inserter(vec);
 	// 通过插入迭代器赋值时，会调用push_back将一个具有给定值的元素添加的容器中
 	*it = 42;
+
+	vector<int> vec1;
+	// fill_n将给定值(10)赋予迭代器指向的元素及其后的
+	fill_n(back_inserter(vec1), 10, 0); // 正确：添加10个元素到vec1 --- 每次赋值都是调用push_back，而不是"="
+	// fill_n(vec1.begin(), 10, 0)      // 错误：修改vec1（是个空vector）中不存在的元素
 }
 
 int main()
