@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <numeric>
+#include <iterator>
 
 void readOnlyAlgorithm()
 {
@@ -30,6 +31,15 @@ void writeAlgorithm()
 	fill_n(vec.begin(), vec.size(), 0); // 正确：因为是空vector，所以vec.size()个数为0
 	// fill_n(vec.begin(), 10, 0)       // 错误：修改vec（是个空vector）中不存在的元素
 
+}
+
+void backInserter()
+{
+	vector<int> vec; // 0个元素
+	// back_inserter接受一个指向容器的引用，返回一个插入迭代器
+	auto it = back_inserter(vec);
+	// 通过插入迭代器赋值时，会调用push_back将一个具有给定值的元素添加的容器中
+	*it = 42;
 }
 
 int main()
