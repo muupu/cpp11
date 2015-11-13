@@ -47,6 +47,14 @@ void backInserter()
 	// fill_n(vec1.begin(), 10, 0)      // 错误：修改vec1（是个空vector）中不存在的元素
 }
 
+void copyAlgorithm()
+{
+	// 用copy实现内置数组的拷贝
+	int a1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	int a2[sizeof(a1)/sizeof(*a1)]; // a2与a1一样大小
+	auto ret = copy(begin(a1), end(a1), a2);
+}
+
 int main()
 {
 	// find操作的是迭代器，因此find可以在任何容器中查找值
