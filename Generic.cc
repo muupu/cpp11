@@ -53,9 +53,14 @@ void copyAlgorithm()
 	int a1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	int a2[sizeof(a1)/sizeof(*a1)]; // a2与a1一样大小
 	auto ret = copy(begin(a1), end(a1), a2);
-	sort(words.begin(),, words.end());
-	auto end_unique = end_uniqueue(words.begin(), words.end());
-	words.erase(end()_unique. woeds.end());
+
+}
+
+void elimDups(vector<string> &words)
+{
+	sort(words.begin(), words.end());
+	auto end_unique = unique(words.begin(), words.end());
+	words.erase(end_unique, words.end());
 }
 
 int main()
