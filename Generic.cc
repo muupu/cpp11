@@ -59,7 +59,9 @@ void copyAlgorithm()
 void elimDups(vector<string> &words)
 {
 	sort(words.begin(), words.end());
+	// unique返回一个指向不重复值范围末尾的迭代器
 	auto end_unique = unique(words.begin(), words.end());
+	// 使用vector的erase成员来完成真正的删除操作
 	words.erase(end_unique, words.end());
 }
 
