@@ -8,6 +8,15 @@ bool isShorter(const string &s1, const string &s2)
 	return s1.size() < s2.size();
 }
 
+void biggies(vector<string> &words, vector<string>::size_type sz)
+{
+	eliDups(words);
+	// 按长度排序，长度相同的单词维持字典序
+	stable_sort(words.begin(), words.end(), 
+		         [](const string &a, const string &b)
+		         { return a.size() < b.size();});
+}
+
 int main()
 {
 	// sort接受一个二元谓词参数
