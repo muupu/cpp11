@@ -15,6 +15,10 @@ void biggies(vector<string> &words, vector<string>::size_type sz)
 	stable_sort(words.begin(), words.end(), 
 		         [](const string &a, const string &b)
 		         { return a.size() < b.size();});
+	// 获取一个迭代器，指向第一个满足size()>=sz的元素
+	auto wc = find_if(words.begin(), words.end(),
+		[sz](const string &a)
+			{ return a.size() >= sz; });
 }
 
 int main()
