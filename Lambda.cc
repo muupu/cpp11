@@ -23,6 +23,11 @@ void biggies(vector<string> &words, vector<string>::size_type sz)
 	auto count = words.end() - wc;
 	cout << count << " " << make_plural(count, "word", "s")
 	     << " of length " << sz << " or longer" << endl;
+	// 打印长度大于等于给定值的单词，每个单词后面接一个空格
+	// for_each接受一个可调用对象，并对输入序列中的每个元素调用此对象
+	for_each(wc, words.end(),
+		     [](const string &s) { cout << s << " ";});
+	cout << endl;
 }
 
 int main()
