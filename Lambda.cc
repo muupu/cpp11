@@ -30,6 +30,15 @@ void biggies(vector<string> &words, vector<string>::size_type sz)
 	cout << endl;
 }
 
+void fcn1()
+{
+	size_t v1 = 42;
+	// 将v1拷贝到名为f的可调用对象
+	auto f = [v1] { return v1; };
+	v1 = 0;
+	auto j = f(); // j为42；f保存了我们创建它时v1的拷贝
+}
+
 int main()
 {
 	// sort接受一个二元谓词参数
