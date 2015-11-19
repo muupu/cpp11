@@ -39,6 +39,13 @@ void fcn1()
 	auto j = f(); // j为42；f保存了我们创建它时v1的拷贝
 }
 
+void fcn2()
+{
+	size_t v1 = 42;
+	auto f2 = [&v1] { return v1; };
+	v1 = 0;
+	auto j = f2();
+}
 int main()
 {
 	// sort接受一个二元谓词参数
