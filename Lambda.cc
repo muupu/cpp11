@@ -46,6 +46,14 @@ void fcn2()
 	v1 = 0;
 	auto j = f2();
 }
+
+void biggies(vector<string> &words,
+	         vector<string>::size_type sz,
+	         ostream &os = cout, char c = ' ')
+{
+	for_each(words.begin(), words.end(), [$os, c](const string &s) { os << s << c; });
+}
+
 int main()
 {
 	// sort接受一个二元谓词参数
