@@ -52,6 +52,11 @@ void biggies(vector<string> &words,
 	         ostream &os = cout, char c = ' ')
 {
 	for_each(words.begin(), words.end(), [$os, c](const string &s) { os << s << c; });
+	// os隐式捕获
+	for_each(words.begin(), words.end(),
+		     [&, c](const string &s) { os << s << c; });
+	for_each(words.begin(), words.end(),
+		     [=, &os](const string &s) { os << s << c; });
 }
 
 int main()
