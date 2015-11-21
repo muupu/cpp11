@@ -47,6 +47,14 @@ void fcn2()
 	auto j = f2();
 }
 
+void fcn3()
+{
+	size_t v1 = 42;
+	auto f = [v1] () mutable { return ++v1; };
+	v1 = 0;
+	auto j = f();
+}
+
 void biggies(vector<string> &words,
 	         vector<string>::size_type sz,
 	         ostream &os = cout, char c = ' ')
