@@ -55,6 +55,13 @@ void fcn3()
 	auto j = f();
 }
 
+void fcn4()
+{
+	size_t v1 = 42;
+	auto f2 = [&v1] { return ++v1; };
+	v1 = 0;
+	auto j = f2();
+}
 void biggies(vector<string> &words,
 	         vector<string>::size_type sz,
 	         ostream &os = cout, char c = ' ')
