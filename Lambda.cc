@@ -58,10 +58,17 @@ void fcn3()
 void fcn4()
 {
 	size_t v1 = 42;
+	// 引用捕获的变量的修改
 	auto f2 = [&v1] { return ++v1; };
 	v1 = 0;
 	auto j = f2();
 }
+
+bool check_size(const string &s, string::size_type sz)
+{
+	return s.size() >= sz;
+}
+
 void biggies(vector<string> &words,
 	         vector<string>::size_type sz,
 	         ostream &os = cout, char c = ' ')
