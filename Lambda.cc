@@ -69,6 +69,19 @@ bool check_size(const string &s, string::size_type sz)
 	return s.size() >= sz;
 }
 
+void bind()
+{
+	auto check6 = bind(check_size, _1, 6);
+	string s = "hello";
+	bool b1 = check6(s);
+	// auto wc = find_if(words.begin(), words.end(),
+	// 	              [sz](const string &a))
+	auto wc = find_if(words.begin(), words.end(), 
+		              bind(check_size, _1, sz));
+
+
+}
+
 void biggies(vector<string> &words,
 	         vector<string>::size_type sz,
 	         ostream &os = cout, char c = ' ')
