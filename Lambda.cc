@@ -79,6 +79,7 @@ void bind()
 	auto wc = find_if(words.begin(), words.end(), 
 		              bind(check_size, _1, sz));
 
+	auto g = bind(f, a, b, _2, c, _1);
 
 }
 
