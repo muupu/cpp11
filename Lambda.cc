@@ -69,6 +69,12 @@ bool check_size(const string &s, string::size_type sz)
 	return s.size() >= sz;
 }
 
+ostream &print(ostream &os, const string &s, char c)
+{
+	return os << s << c;
+}
+
+
 void bind()
 {
 	auto check6 = bind(check_size, _1, 6);
@@ -80,6 +86,10 @@ void bind()
 		              bind(check_size, _1, sz));
 
 	auto g = bind(f, a, b, _2, c, _1);
+
+	// 绑定引用参数
+	for_each(words.begin(), words.end(), bind(print, os, _1, ' '));
+	for_each(words.begin(), words.end(), bind(print, ref(os), _1, ' '));
 
 }
 
