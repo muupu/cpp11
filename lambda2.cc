@@ -5,13 +5,15 @@
 
 int op_increase (int i) { return ++i; }
 
-void println(std::vector<int> foo)
+void printVec(std::vector<int> foo)
 {
 	for (auto it=foo.begin(); it!=foo.end(); ++it)
 		std::cout << ' ' << *it;
 	std::cout << '\n';
 }
 
+
+// transform使用
 void transform()
 {
 	std::vector<int> foo;
@@ -31,12 +33,13 @@ void transform()
 	                                              // foo: 21 41 61 81 101
 
 	std::cout << "foo contains:";
-	println(foo);
+	printVec(foo);
 
 	// Output:
     // foo contains: 21 41 61 81 101
 }
 
+// 指定lambda返回类型
 void transform2()
 {
 	std::vector<int> v1;
@@ -45,9 +48,14 @@ void transform2()
 		v1.push_back(i);
 	}
 
+	
+	// 使用transform将每个负数替换为正数
 	std::transform(v1.begin(), v1.end(), v1.begin(), 
 		           [] (int i) { return i < 0 ? -i : i;});
-	println(v1);
+
+	
+
+	printVec(v1);
 
 }
 
