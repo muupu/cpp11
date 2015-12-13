@@ -50,14 +50,17 @@ void transform2()
 
 	
 	// 使用transform将每个负数替换为正数
-	//std::transform(v1.begin(), v1.end(), v1.begin(), 
-	//	           [] (int i) { return i < 0 ? -i : i;});
+	std::transform(v1.begin(), v1.end(), v1.begin(), 
+		           [] (int i) { return i < 0 ? -i : i;});
 
 	// 默认情况下，如果一个lambda包含return之外的任何语句，则编译器假定返回void
 	// 编译错误：编译器推断这个版本的lambda返回类型为void，但它返回了一个int值
-	std::transform(v1.begin(), v1.end(), v1.begin(),
-		            [](int i) { if (i < 0) return -i; else return i;});
+	//std::transform(v1.begin(), v1.end(), v1.begin(),
+	//	            [](int i) { if (i < 0) return -i; else return i;});
 
+	std::transform(v1.begin(), v1.end(), v1.begin(),
+		            [](int i) -> int
+		            { if (i < 0) return -i; else return i;});
 
 	printVec(v1);
 
