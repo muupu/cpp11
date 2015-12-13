@@ -3,6 +3,8 @@
 #include <vector>       // std::vector
 #include <functional>   // std::plus
 
+int op_increase (int i) { return ++i; }
+
 void transform()
 {
 	std::vector<int> foo;
