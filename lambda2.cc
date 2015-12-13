@@ -5,6 +5,13 @@
 
 int op_increase (int i) { return ++i; }
 
+void println(std::vector<int> foo)
+{
+	for (auto it=foo.begin(); it!=foo.end(); ++it)
+		std::cout << ' ' << *it;
+	std::cout << '\n';
+}
+
 void transform()
 {
 	std::vector<int> foo;
@@ -24,13 +31,29 @@ void transform()
 	                                              // foo: 21 41 61 81 101
 
 	std::cout << "foo contains:";
-	for (std::vector<int>::iterator it=foo.begin(); it!=foo.end(); ++it)
-		std::cout << ' ' << *it;
-	std::cout << '\n';
+	println(foo);
+
+	// Output:
+    // foo contains: 21 41 61 81 101
+}
+
+void transform2()
+{
+	std::vector<int> v1;
+	for (int i = -6; i < 6; i++)
+	{
+		v1.push_back(i);
+	}
+
+	std::transform(v1.begin(), v1.end(), v1.begin(), 
+		           [] (int i) { return i < 0 ? -i : i;});
+	println(v1);
+
 }
 
 int main()
 {
 	transform();
+	transform2();
 	return 0;
 }
