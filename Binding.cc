@@ -20,5 +20,8 @@ int main () {
   auto fn_half = std::bind(my_divide, _1, 2);       // returns x/2
   std::cout << fn_half(10) << '\n';                  // 5
 
+  auto fn_invert = std::bind (my_divide,_2,_1);            // returns y/x
+  std::cout << fn_invert(10,2) << '\n';                    // 2/10 = 0.2
+
   return 0;
 }
