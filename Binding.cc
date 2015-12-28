@@ -16,5 +16,9 @@ int main () {
   auto fn_five = std::bind (my_divide, 10, 2);               // returns 10/2
   std::cout << fn_five() << '\n';                           // 5
 
+  // 2 使用_1
+  auto fn_half = std::bind(my_drivide, _1, 2);       // returns x/2
+  std::cout << fn_half(10) << '\n';                  // 5
+
   return 0;
 }
