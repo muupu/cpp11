@@ -48,7 +48,7 @@ void bind_check_size()
   auto check6 = std::bind(check_size, _1, 6); // check6现在只接受单一参数，sz参数绑定为6
   std::string s = "hello";
   bool b1 = check6(s);  // 即调用check(s, 6)
-  std::cout << b1 <<　'\n';
+  std::cout << b1 << '\n';
 }
 
 int main () {
