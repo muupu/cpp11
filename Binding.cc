@@ -9,7 +9,7 @@ struct MyPair {
   double multiply() {return a*b;}
 };
 
-int main () {
+void bind_example1(){
   using namespace std::placeholders;    // adds visibility of _1, _2, _3,...
 
   // binding functions:
@@ -33,6 +33,24 @@ int main () {
 
   auto bound_member_data = std::bind (&MyPair::a,ten_two); // returns ten_two.a
   std::cout << bound_member_data() << '\n';                // 10
+}
+
+//将check_size改造成，接受单一参数
+bool check_size(const string &s, string::size_type sz)
+{
+  return s.size() >= sz;
+}
+
+void bind_check_size()
+{
+  auto check6 = std::bind(check_size, _1, 6); // check6现在只接受单一参数，sz参数绑定为6
+  string s = "hello";
+  bool b1 = check6(s);  // 即调用check(s, 6)
+  std::cout << b1 <<　'\n';
+}
+
+int main () {
+  bind_example1();
 
   return 0;
 }
