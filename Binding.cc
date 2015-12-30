@@ -2,6 +2,8 @@
 #include <functional>   // std::bind
 #include <string>       // std::string
 
+using namespace std::placeholders;    // adds visibility of _1, _2, _3,...
+
 // a function: (also works with function object: std::divides<double> my_divide;)
 double my_divide (double x, double y) {return x/y;}
 
@@ -11,8 +13,7 @@ struct MyPair {
 };
 
 void bind_example1(){
-  using namespace std::placeholders;    // adds visibility of _1, _2, _3,...
-
+  
   // binding functions:
   auto fn_five = std::bind (my_divide, 10, 2);               // returns 10/2
   std::cout << fn_five() << '\n';                           // 5
