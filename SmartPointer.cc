@@ -27,9 +27,10 @@ void make_shared_example()
   	auto bar = std::make_shared<int> (20);
 	auto baz = std::make_shared<std::pair<int,int>> (30,40);
 
-	std::cout << "*foo: " << *foo << '\n';
-	std::cout << "*bar: " << *bar << '\n';
-	std::cout << "*baz: " << baz->first << ' ' << baz->second << '\n'
+	// 解引用shared_ptr
+	std::cout << "*foo: " << *foo << '\n';   // *foo: 10
+	std::cout << "*bar: " << *bar << '\n';   // *bar: 20
+	std::cout << "*baz: " << baz->first << ' ' << baz->second << '\n'; // *baz: 30 40
 }
 
 int main()
