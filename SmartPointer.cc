@@ -5,7 +5,7 @@
 void shared_ptr_constructor_example()
 {
 	std::cout << "shared_ptr_constructor_example" << '\n';
-	
+
 	std::shared_ptr<int> p1;
 	std::shared_ptr<int> p2 (nullptr);
 	std::shared_ptr<int> p3 (new int);
@@ -41,17 +41,19 @@ void shared_ptr_copy_assign_example()
 {
 	std::cout << "shared_ptr_copy_assign_example" << '\n';
 
+	// copy
 	auto p = std::make_shared<int>(42); // p所指向的对象(make_shared<int>(42))只有一个引用者(p)
-	std::cout << "p.use_count(): " << p.use_count() << '\n';
+	std::cout << "p.use_count(): " << p.use_count() << '\n';  // 1
 	auto q(p); // 现在(make_shared<int>(42))有两个引用者(p，q)
-	std::cout << "p.use_count(): " << p.use_count() << '\n';
-	std::cout << "q.use_count(): " << q.use_count() << '\n';
+	std::cout << "p.use_count(): " << p.use_count() << '\n';  // 2
+	std::cout << "q.use_count(): " << q.use_count() << '\n';  // 2
 
+	// assign
 	auto r = std::make_shared<int>(10);
-	std::cout << "r.use_count(): " << r.use_count() << '\n';
-	r = q;
-	std::cout << "r.use_count(): " << r.use_count() << '\n';
-	std::cout << "q.use_count(): " << q.use_count() << '\n';
+	std::cout << "r.use_count(): " << r.use_count() << '\n';  // 1
+	r = q; // 给r赋值，r原来指向的对象的引用计数减1，变为0，就会自动释放。
+	std::cout << "r.use_count(): " << r.use_count() << '\n';  // 3
+	std::cout << "q.use_count(): " << q.use_count() << '\n';  // 3
 }
 
 int main()
