@@ -31,6 +31,8 @@ int main () {
   auto bound_member_fn = std::bind (&MyPair::multiply,_1); // returns x.multiply()
   std::cout << bound_member_fn(ten_two) << '\n';           // 20
 
+  auto bound_member_data = std::bind (&MyPair::a,ten_two); // returns ten_two.a
+  std::cout << bound_member_data() << '\n';                // 10
 
   return 0;
 }
