@@ -4,6 +4,8 @@
 
 void shared_ptr_constructor_example()
 {
+	std::cout << "shared_ptr_constructor_example" << '\n';
+	
 	std::shared_ptr<int> p1;
 	std::shared_ptr<int> p2 (nullptr);
 	std::shared_ptr<int> p3 (new int);
@@ -17,6 +19,8 @@ void shared_ptr_constructor_example()
 // 动态分配对象的内存并初始化，返回指向此对象的shared_ptr
 void make_shared_example()
 {
+	std::cout << "make_shared_example" << '\n';
+
 	// 指向一个值为10的int类型的shared_ptr
 	std::shared_ptr<int> foo = std::make_shared<int> (10);
 
@@ -35,6 +39,8 @@ void make_shared_example()
 
 void shared_ptr_copy_assign_example()
 {
+	std::cout << "shared_ptr_copy_assign_example" << '\n';
+
 	auto p = std::make_shared<int>(42); // p所指向的对象(make_shared<int>(42))只有一个引用者(p)
 	std::cout << "p.use_count(): " << p.use_count() << '\n';
 	auto q(p); // 现在(make_shared<int>(42))有两个引用者(p，q)
