@@ -1,5 +1,6 @@
 #include <iostream>     // std::cout
 #include <functional>   // std::bind
+#include <string>       // std::string
 
 // a function: (also works with function object: std::divides<double> my_divide;)
 double my_divide (double x, double y) {return x/y;}
@@ -44,7 +45,7 @@ bool check_size(const string &s, string::size_type sz)
 void bind_check_size()
 {
   auto check6 = std::bind(check_size, _1, 6); // check6现在只接受单一参数，sz参数绑定为6
-  string s = "hello";
+  std::string s = "hello";
   bool b1 = check6(s);  // 即调用check(s, 6)
   std::cout << b1 <<　'\n';
 }
