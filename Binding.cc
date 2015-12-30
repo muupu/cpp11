@@ -37,7 +37,7 @@ void bind_example1(){
 }
 
 //将check_size改造成，接受单一参数
-bool check_size(const string &s, string::size_type sz)
+bool check_size(const std::string &s, std::string::size_type sz)
 {
   return s.size() >= sz;
 }
@@ -52,6 +52,6 @@ void bind_check_size()
 
 int main () {
   bind_example1();
-
+  bind_check_size();
   return 0;
 }
