@@ -41,7 +41,7 @@ void shared_ptr_copy_assign_example()
 	std::cout << "p.use_count(): " << p.use_count() << '\n';
 	std::cout << "q.use_count(): " << q.use_count() << '\n';
 
-	auto r = make_shared<int>(10);
+	auto r = std::make_shared<int>(10);
 	std::cout << "r.use_count(): " << r.use_count() << '\n';
 	r = q;
 	std::cout << "r.use_count(): " << r.use_count() << '\n';
