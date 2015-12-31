@@ -1,6 +1,8 @@
 #include <vector>
 #include <string>
 
+// Blob类保存一组元素。与容器不同，Blob对象的不同拷贝之间共享相同的元素。
+// 即，当我们拷贝一个Blob时，原Blob对象及其拷贝应该引用相同的底层对象。
 class StrBolb {
 public:
 	typedef std::vector<std::string>::size_type size_type;
