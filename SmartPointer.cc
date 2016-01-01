@@ -61,7 +61,8 @@ void shared_ptr_and_new_example()
 	// 智能指针构造函数是explicit，因此，不能将内置指针隐式转换为一个智能指针
 	// 必须直接初始化
 	std::shared_ptr<int> p1(new int(1024)); // 正确，使用了直接初始化形式
-	std::shared_ptr<int> p2 = new int(1024); // 错误。
+	// std::shared_ptr<int> p2 = new int(1024); // 错误。
+	// error: conversion from ‘int*’ to non-scalar type ‘std::shared_ptr<int>’ requested
 }
 
 int main()
