@@ -24,7 +24,7 @@ public:
 	string& front();
 	string& back();
 
-	long int use_count() { return data->use_count(); }
+	long use_count() { return data.use_count(); }
 	void print();
 
 private:
