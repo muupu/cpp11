@@ -70,7 +70,7 @@ string& StrBlob::back()
 
 void StrBlob::print()
 {
-	for (auto it = data.begin(); it < data.end(); it ++)
+	for (auto it = (*data).begin(); it < (*data).end(); it ++)
 		cout << (*it) << '\n';  // 2
 }
 
