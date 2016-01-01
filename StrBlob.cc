@@ -31,6 +31,7 @@ private:
 // 构造函数
 // 默认构造函数分配一个空vector
 StrBlob::StrBlob(): data(make_shared<vector<string>>()) { }
+// 将花括号列表中的元素进行拷贝，来初始化vector的元素
 StrBlob::StrBlob(initializer_list<string> il):
 					data(make_shared<vector<string>>(il)) { }
 
