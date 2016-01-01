@@ -63,3 +63,19 @@ string& StrBlob::back()
 	index_check(0, "pop_back on empty StrBlob");
 	return data->back();
 }
+
+int main()
+{
+	StrBlob b1;
+	{
+		StrBlob b2 = {"a", "an", "the"};
+		b1 = b2;
+		b2.push_back("about");
+	}
+	cout << "b1.use_count(): " << b1.use_count() << '\n';  // 2
+	cout << "b2.use_count(): " << b2.use_count() << '\n';  // 2
+	for (auto it = b1.begin(); it < b1.end(); it ++)
+		cout << (*it) << '\n';  // 2
+
+	return 0;
+}
