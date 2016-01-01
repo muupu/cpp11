@@ -24,7 +24,7 @@ public:
 	string& front();
 	string& back();
 
-	long use_count() { return data.use_count(); }
+	long use_count() { return data.use_count(); } // 使用data->use_count() 会出错
 	void print();
 
 private:
@@ -70,7 +70,8 @@ string& StrBlob::back()
 
 void StrBlob::print()
 {
-	for (auto it = (*data).begin(); it < (*data).end(); it ++)
+	for (auto it = data->begin(); it < data->end(); it ++)
+	//for (auto it = (*data).begin(); it < (*data).end(); it ++) 
 		cout << (*it) << '\n';  // 2
 }
 
