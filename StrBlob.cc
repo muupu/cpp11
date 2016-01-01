@@ -24,7 +24,7 @@ public:
 	string& front();
 	string& back();
 
-	long use_count() { return data.use_count(); } // 使用data->use_count() 会出错
+	long use_count() { return data.use_count(); } // 使用data->use_count() 会出错。
 	void print();
 
 private:
