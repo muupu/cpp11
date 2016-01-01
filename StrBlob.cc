@@ -26,7 +26,7 @@ public:
 private:
 	shared_ptr<vector<string>> data;
 	// 如果data[i]不合法，抛出一个异常
-	void check(size_type i, const string &msg) const;
+	void index_check(size_type i, const string &msg) const;
 };
 
 // 构造函数
@@ -37,8 +37,15 @@ StrBlob::StrBlob(initializer_list<string> il):
 					data(make_shared<vector<string>>(il)) { }
 
 // 检查给定索引i是否在合法范围；string传递给异常处理程序
-void StrBlob:::check(size_type i, const string &msg) const
+void StrBlob:::index_check(size_type i, const string &msg) const
 {
 	if (i >= data->size())
 		throw out_of_range(msg);
+}
+
+// 删除元素
+void StrBlob::pop_back()
+{
+	index_check(0, "pop_back on empty StrBlob");
+	data->pop_back();
 }

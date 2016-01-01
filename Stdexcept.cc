@@ -17,6 +17,6 @@ void out_of_range_example()
 
 int main (void) 
 {
-  out_of_range_example(); // Possible output:Out of Range error: vector::_M_range_check
+  out_of_range_example(); // Out of Range error: vector::_M_range_check
   return 0;
 }
