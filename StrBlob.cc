@@ -54,5 +54,12 @@ void StrBlob::pop_back()
 // 访问元素
 string& StrBlob::front()
 {
-	index_check(0, "front on ")
+	index_check(0, "front on empty StrBlob");
+	return data->front();
+}
+
+string& StrBlob::back()
+{
+	index_check(0, "pop_back on empty StrBlob");
+	return data->back();
 }
