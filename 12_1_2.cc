@@ -29,7 +29,7 @@ int main()
 {
 	vector<int> *v = new_vector();
 	auto v1 = input_vector(v);
-	print_vector(v1);
+	print_vector(v);
 
 	delete v;
 	v = nullptr;
