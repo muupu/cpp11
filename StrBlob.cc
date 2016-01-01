@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <stdexcept>      // std::out_of_range
 
 using namespace std;
 
@@ -35,3 +36,9 @@ StrBlob::StrBlob(): data(make_shared<vector<string>>()) { }
 StrBlob::StrBlob(initializer_list<string> il):
 					data(make_shared<vector<string>>(il)) { }
 
+// 检查给定索引i是否在合法范围；string传递给异常处理程序
+void StrBlob:::check(size_type i, const string &msg) const
+{
+	if (i >= data->size())
+		throw out_of_range(msg);
+}
