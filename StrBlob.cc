@@ -84,9 +84,8 @@ int main()
 		b2.push_back("about");
 		cout << "b2.use_count(): " << b2.use_count() << '\n';  // 2
 	}
-	cout << "b1.use_count(): " << b1.use_count() << '\n';  // 2
+	cout << "b1.use_count(): " << b1.use_count() << '\n';  // 1。因为b2被销毁了。
 	b1.print();
 	
-
 	return 0;
 }
