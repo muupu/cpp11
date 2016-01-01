@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <iostream>
 #include <stdexcept>      // std::out_of_range
 
 using namespace std;
