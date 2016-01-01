@@ -14,13 +14,13 @@ void input_vector(shared_ptr<vector<int>> v)
 {
 	int value;
 	while (cin >> value)
-		v->push_back(value)
+		v->push_back(value);
 }
 
 void print_vector(shared_ptr<vector<int>> v)
 {
 	for (const auto &value : *v)
-		cout << value << " "
+		cout << value << " ";
 	cout << endl;
 }
 
