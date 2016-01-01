@@ -38,7 +38,7 @@ StrBlob::StrBlob(initializer_list<string> il):
 					data(make_shared<vector<string>>(il)) { }
 
 // 检查给定索引i是否在合法范围；string传递给异常处理程序
-void StrBlob:::index_check(size_type i, const string &msg) const
+void StrBlob::index_check(size_type i, const string &msg) const
 {
 	if (i >= data->size())
 		throw out_of_range(msg);
