@@ -46,6 +46,13 @@ void StrBlob:::index_check(size_type i, const string &msg) const
 // 删除元素
 void StrBlob::pop_back()
 {
+	// 在试图访问元素之前必须检查vector为空
 	index_check(0, "pop_back on empty StrBlob");
 	data->pop_back();
+}
+
+// 访问元素
+string& StrBlob::front()
+{
+	index_check(0, "front on ")
 }
