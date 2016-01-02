@@ -67,15 +67,18 @@ void shared_ptr_and_new_example()
 
 void process(std::shared_ptr<int> ptr)
 {
-	std::cout << "[process]ptr.use_count(): " << ptr.use_count() << '\n';  // 
+	std::cout << "[process]ptr.use_count(): " << ptr.use_count() << '\n';  
 }
 
 void mix_shared_ptr_and_new()
 {
 	std::shared_ptr<int> p(new int(42));
-	std::cout << "[mix_shared_ptr_and_new]p.use_count(): " << p.use_count() << '\n';  // 
-	process(p);
-	std::cout << "[mix_shared_ptr_and_new]p.use_count(): " << p.use_count() << '\n';  // 
+	std::cout << "[mix_shared_ptr_and_new 1]p.use_count(): " << p.use_count() << '\n';  // 1
+	process(p);                                                                         // 2
+	std::cout << "[mix_shared_ptr_and_new 2]p.use_count(): " << p.use_count() << '\n';  // 1
+	// Exercise 12.10
+	process(std::shared_ptr<int>(p));                                                   // 2
+	std::cout << "[mix_shared_ptr_and_new 3]p.use_count(): " << p.use_count() << '\n';  // 1
 }
 
 int main()
