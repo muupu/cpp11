@@ -65,11 +65,25 @@ void shared_ptr_and_new_example()
 	// error: conversion from ‘int*’ to non-scalar type ‘std::shared_ptr<int>’ requested
 }
 
+void process(shared_ptr<int> ptr)
+{
+	std::cout << "[process]ptr.use_count(): " << ptr.use_count() << '\n';  // 
+}
+
+void mix_shared_ptr_and_new()
+{
+	shared_ptr<int> p(new int(42));
+	std::cout << "[mix_shared_ptr_and_new]p.use_count(): " << p.use_count() << '\n';  // 
+	process(p);
+	std::cout << "[mix_shared_ptr_and_new]p.use_count(): " << p.use_count() << '\n';  // 
+}
+
 int main()
 {
 	shared_ptr_constructor_example();
 	make_shared_example();
 	shared_ptr_copy_assign_example();
 	shared_ptr_and_new_example();
+	mix_shared_ptr_and_new();
 	return 0;
 }
