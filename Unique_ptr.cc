@@ -26,6 +26,21 @@ void unique_ptr_constructor_example()
 	std::cout << "u8: " << (u8?"not null":"null") << '\n';
 }
 
+void unique_ptr_release_example()
+{
+	std::unique_ptr<int> auto_pointer(new int);
+	int * manual_pointer;
+
+	*auto_pointer=10;
+
+	manual_pointer = auto_pointer.release();
+	// (auto_pointer is now empty)
+
+	std::cout << "manual_pointer points to " << *manual_pointer << '\n';
+
+	delete manual_pointer;
+}
+
 void unique_ptr_no_copy_assign()
 {
 	unique_ptr<string>p1(new string("Stegosaurus"));
@@ -44,7 +59,8 @@ void unique_ptr_no_copy_assign()
 
 int main () 
 {
-	//unique_ptr_constructor_example();
+	unique_ptr_constructor_example();
+	unique_ptr_release_example();
 	unique_ptr_no_copy_assign();
 	return 0;
 }
