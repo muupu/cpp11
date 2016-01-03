@@ -6,6 +6,8 @@ using namespace std;
 
 void unique_ptr_constructor_example()
 {
+	std::cout << "---unique_ptr_constructor_example---" << '\n';
+
 	std::default_delete<int> d;
 	std::unique_ptr<int> u1;  // u1: null
 	std::unique_ptr<int> u2 (nullptr); // u2: null
@@ -28,6 +30,8 @@ void unique_ptr_constructor_example()
 
 void unique_ptr_release_example()
 {
+	std::cout << "---unique_ptr_release_example---" << '\n';
+
 	std::unique_ptr<int> auto_pointer(new int);
 	int * manual_pointer;
 
@@ -43,6 +47,8 @@ void unique_ptr_release_example()
 
 void unique_ptr_no_copy_assign()
 {
+	std::cout << "---unique_ptr_no_copy_assign---" << '\n';
+
 	unique_ptr<string>p1(new string("Stegosaurus"));
 	// unique_ptr<string> p2(p1);  // error: no copy for unique_ptr
 	// unique_ptr<string> p3;
@@ -51,10 +57,14 @@ void unique_ptr_no_copy_assign()
 	// 虽然不能拷贝或赋值unique_ptr，但可以通过release和reset将指针的所有权
 	// 从一个(非const)unique_ptr转移给另一个unique
 	// transfers ownership from p1 (which points to the string Stegosaurus) to p2
+	std::cout << "p1 points to " << *p1 << '\n';
 	unique_ptr<string> p2(p1.release()); // release makes p1 null
+	std::cout << "p2 points to " << *p2 << '\n';
 	unique_ptr<string> p3(new string("Trex"));
+	std::cout << "p3 points to " << *p3 << '\n';
 	// transfers ownership from p3 to p2
 	p2.reset(p3.release()); // reset deletes the memory to which p2 had pointed
+	std::cout << "p2 points to " << *p2 << '\n';
 }
 
 int main () 
