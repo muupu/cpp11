@@ -24,8 +24,8 @@ void unique_ptr_constructor_example()
 	std::cout << "u8: " << (u8?"not null":"null") << '\n';
 }
 
-int main () {
-  
-
-  return 0;
+int main () 
+{
+	unique_ptr_constructor_example();
+	return 0;
 }
