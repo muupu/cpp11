@@ -29,9 +29,17 @@ void unique_ptr_constructor_example()
 void unique_ptr_no_copy_assign()
 {
 	unique_ptr<string>p1(new string("Stegosaurus"));
-	unique_ptr<string> p2(p1);  // error: no copy for unique_ptr
-	unique_ptr<string> p3;
-	p3 = p2;  // error: no assign for unique_ptr
+	// unique_ptr<string> p2(p1);  // error: no copy for unique_ptr
+	// unique_ptr<string> p3;
+	// p3 = p2;  // error: no assign for unique_ptr
+
+	// 虽然不能拷贝或赋值unique_ptr，但可以通过release和reset将指针的所有权
+	// 从一个(非const)unique_ptr转移给另一个unique
+	// transfers ownership from p1 (which points to the string Stegosaurus) to p2
+	unique_ptr<string> p2(p1.release()); // release makes p1 null
+	unique_ptr<string> p3(new string("Trex"));
+	// transfers ownership from p3 to p2
+	p2.reset(p3.release()); // reset deletes the memory to which p2 had pointed
 }
 
 int main () 
