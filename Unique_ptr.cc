@@ -2,6 +2,8 @@
 #include <iostream>
 #include <memory>
 
+using namespace std;
+
 void unique_ptr_constructor_example()
 {
 	std::default_delete<int> d;
