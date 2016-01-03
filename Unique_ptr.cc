@@ -42,7 +42,8 @@ void unique_ptr_release_example()
 
 	std::cout << "manual_pointer points to " << *manual_pointer << '\n';
 
-	delete manual_pointer;
+	// 如果不用另一个智能指针来保存release返回的指针，必须记得手动释放返回的指针
+	delete manual_pointer; //
 }
 
 void unique_ptr_no_copy_assign()
