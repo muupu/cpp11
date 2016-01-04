@@ -26,8 +26,9 @@ void weak_ptr_constructor_example()
 
 void weak_ptr_constructor_example2()
 {
+    std::cout << "--- weak_ptr_constructor_example2 ---" << '\n';
+
     std::weak_ptr<Foo> w_ptr;
- 
    {
       auto ptr = std::make_shared<Foo>();
       w_ptr = ptr;
