@@ -42,5 +42,6 @@ void weak_ptr_constructor_example2()
 int main () 
 {
   weak_ptr_constructor_example();
+  weak_ptr_constructor_example2();
   return 0;
 }
