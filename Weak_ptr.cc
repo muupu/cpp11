@@ -19,9 +19,9 @@ void weak_ptr_constructor_example()
     std::weak_ptr<int> wp3 (sp);
 
     std::cout << "use_count:\n";
-    std::cout << "wp1: " << wp1.use_count() << '\n';
-    std::cout << "wp2: " << wp2.use_count() << '\n';
-    std::cout << "wp3: " << wp3.use_count() << '\n';
+    std::cout << "wp1.use_count: " << wp1.use_count() << '\n';
+    std::cout << "wp2.use_count: " << wp2.use_count() << '\n';
+    std::cout << "wp3.use_count: " << wp3.use_count() << '\n';
 }
 
 int main () 
