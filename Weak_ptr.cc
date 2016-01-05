@@ -41,10 +41,11 @@ void weak_ptr_constructor_example2()
 
 void observe(std::weak_ptr<int> weak) 
 {
-    if (auto observe = weak.lock()) {
-        std::cout << "\tobserve() able to lock weak_ptr<>, value=" << *observe << "\n";
+    if (auto observe = weak.lock()) { 
+        // 在if中，oberve和weak共享对象
+        std::cout << "observe() able to lock weak_ptr<>, value=" << *observe << "\n";
     } else {
-        std::cout << "\tobserve() unable to lock weak_ptr<>\n";
+        std::cout << "observe() unable to lock weak_ptr<>\n";
     }
 }
 
@@ -54,14 +55,14 @@ void weak_ptr_lock_example()
     std::cout << "--- weak_ptr_lock_example ---" << '\n';
 
     std::weak_ptr<int> weak;
-    observe(weak);
+    observe(weak); // observe() unable to lock weak_ptr<>
     {
         auto shared = std::make_shared<int>(42);
         weak = shared;
         std::cout << "weak_ptr<> initialized with shared_ptr.\n";
-        observe(weak);
-    }
-    observe(weak);
+        observe(weak); // observe() able to lock weak_ptr<>, value=42
+    } // shared_ptr<> has been destructed due to scope exit.
+    observe(weak); // observe() unable to lock weak_ptr<>
 }
 
 int main () 
