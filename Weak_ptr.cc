@@ -49,7 +49,8 @@ void observe(std::weak_ptr<int> weak)
     }
 }
 
-
+// 由于指向的对象可能不存在，不能使用weak_ptr直接访问对象，必须调用lock()
+// lock返回对象的shared_ptr
 void weak_ptr_lock_example()
 {
     std::cout << "--- weak_ptr_lock_example ---" << '\n';
@@ -58,7 +59,7 @@ void weak_ptr_lock_example()
     observe(weak); // observe() unable to lock weak_ptr<>
     {
         auto shared = std::make_shared<int>(42);
-        weak = shared;
+        weak = shared; // weak_ptr支持直接赋值
         std::cout << "weak_ptr<> initialized with shared_ptr.\n";
         observe(weak); // observe() able to lock weak_ptr<>, value=42
     } // shared_ptr<> has been destructed due to scope exit.
