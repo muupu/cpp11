@@ -31,7 +31,7 @@ void weak_ptr_constructor_example2()
     std::weak_ptr<Foo> w_ptr;
    {
       auto ptr = std::make_shared<Foo>();
-      w_ptr = ptr;
+      w_ptr = ptr; // 赋值后共享一个对象
       std::cout << "w_ptr.use_count() inside scope: " << w_ptr.use_count() << '\n'; // 1
    }
  
