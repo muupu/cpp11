@@ -25,7 +25,7 @@ int template_example()
 // 非类型模板参数
 
 template<unsigned N, unsigned M>
-int compare(const char (&p1)[N], const char (&p2)[M])
+int compare2(const char (&p1)[N], const char (&p2)[M])
 {
 	return strcmp(p1, p2);
 }
@@ -34,8 +34,8 @@ int compare(const char (&p1)[N], const char (&p2)[M])
 int nontype_template_parameters_example()
 {
 	cout << "--- nontype_template_parameters_example ---" << endl;
-	cout << compare("hi", "hi") << endl;
-	cout << compare("hi", "hello") << endl;
+	cout << compare2("hi", "hi") << endl;
+	cout << compare2("hi", "hello") << endl;
 }
 
 int main()
