@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <cstring>
 
 using namespace std;
 
@@ -18,6 +19,12 @@ int template_example()
 	vector<int> vec1{1, 2, 3}, vec2{1, 2, 3}, vec3{4, 5, 6};
 	cout << compare(vec1, vec2) << endl;
 	cout << compare(vec1, vec3) << endl;
+}
+
+template<unsigned N, unsigned M>
+int compare(const char (&p1)[N], const char (&p2)[M])
+{
+	return strcmp(p1, p2);
 }
 
 int main()
