@@ -14,6 +14,9 @@ int compare(const T &v1, const T &v2)
 int template_example()
 {
 	cout << compare(1, 0) << endl;
+	vector<int> vec1{1, 2, 3}, vec2{1, 2, 3}, vec3{4, 5, 6};
+	cout << compare(vec1, vec2) << endl;
+	cout << compare(vec1, vec3) << endl;
 }
 
 int main()
