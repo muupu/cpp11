@@ -34,8 +34,8 @@ int compare2(const char (&p1)[N], const char (&p2)[M])
 int nontype_template_parameters_example()
 {
 	cout << "--- nontype_template_parameters_example ---" << endl;
-	cout << compare2("hi", "hi") << endl;
-	cout << compare2("hi", "hello") << endl;
+	cout << compare2("hi", "hi") << endl;    // 0
+	cout << compare2("hi", "hello") << endl; // 4
 }
 
 int main()
