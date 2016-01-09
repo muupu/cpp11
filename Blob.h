@@ -7,4 +7,7 @@ template <typename T> class Blob{
 
 		Blob();
 		Blob()(std::initializer_list<T> il);
+
+		size_type size() const { return data->size(); }
+		bool empty() const { return data->empty(); }
 };
