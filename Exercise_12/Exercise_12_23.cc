@@ -16,4 +16,9 @@ int main()
 	strcpy(newStr, str1);
 	strcat(newStr, str2);
 	cout << "newStr:" << newStr << endl;
+
+	string s1 = "abcd";
+	string s2 = "efgh";
+	strcpy(newStr, (s1 + s2).c_str());
+	cout << "newStr:" << newStr << endl;
 }
