@@ -21,4 +21,7 @@ int main()
 	string s2 = "efgh";
 	strcpy(newStr, (s1 + s2).c_str());
 	cout << "newStr:" << newStr << endl;
+
+	delete[] newStr;
+	return 0;
 }
