@@ -15,4 +15,12 @@ template <typename T> class Blob{
 		void push_back(T &&t) { data->push_back(std::move(t));}
 		void pop_back();
 
+		T& back();
+		T& operator[](size_type i);
+
+	private:
+		std::shared_ptr<std::vector<T>> data;
+		void check(size_type i, const std::string &msg) const;
+		
+
 };
