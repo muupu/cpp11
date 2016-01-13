@@ -16,4 +16,8 @@ int main()
 	// 还未构造对象的情况下使用原始内存是错误的
 	cout << *p << endl;    // 正确：使用string的输出运算符
 	// cout << *q << endl; // 错误：q指向未构造函数
+
+	while (q != p) {
+		alloc.destroy(--q);
+	}
 }
