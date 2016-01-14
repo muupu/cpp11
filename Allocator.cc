@@ -20,4 +20,6 @@ int main()
 	while (q != p) {
 		alloc.destroy(--q);
 	}
+
+	alloc.deallocate(p, n); // 通过deallocate释放内存给系统
 }
