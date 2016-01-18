@@ -2,21 +2,24 @@
 
 using namespace std;  
 
-typedef void (*Fun)(const char* str);
 
-void Print(const char* str)   
+class MyClass
 {
-    cout<<"holle "<<str<<endl;   
+    void Print()   
+    {
+        cout<<"hello world"<<endl;   
+    }
 }
 
-// template<typename  _Fun>
-void CallBackFun(Fun f, const char* str)   
+template<class T>
+void CallBackFun(T* ptr,void(T::*MenFn)())   
 {   
-    f(str);
+    (ptr->*MenFn)(); 
 }   
 
 int main()   
-{   
-    CallBackFun(&Print, "world");
+{
+    MyClass cs;
+    CallBackFun(&cs,&MyClass::Print);
     return  0;
 }   
