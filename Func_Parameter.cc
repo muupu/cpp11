@@ -1,26 +1,19 @@
 #include <iostream>
-
 using namespace std;  
 
-
-class MyClass
+void Print()   
 {
-public:
-    void Print()   
-    {
-        cout<<"hello world"<<endl;   
-    }
-};
+    cout<<"hello world"<<endl;   
+}
 
 template<class T>
-void CallBackFun(T* ptr,void(T::*MenFn)())   
+void CallBackFun(void(*T)())   
 {   
-    (ptr->*MenFn)(); 
+    (*T)(); 
 }   
 
 int main()   
 {
-    MyClass cs;
-    CallBackFun(&cs,&MyClass::Print);
+    CallBackFun(&Print);
     return  0;
 }   
