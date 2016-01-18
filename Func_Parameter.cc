@@ -5,6 +5,7 @@ using namespace std;
 
 class MyClass
 {
+public:
     void Print()   
     {
         cout<<"hello world"<<endl;   
