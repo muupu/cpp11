@@ -22,4 +22,9 @@ int main()
 	}
 
 	alloc.deallocate(p, n); // 通过deallocate释放内存给系统
+
+	// 拷贝和填充未初始化内存的算法
+	auto p = alloc.allocate(vi.size() * 2);
+	auto q = uninitialized_copy(vi.begin(), vi.end(), p);
+	
 }
