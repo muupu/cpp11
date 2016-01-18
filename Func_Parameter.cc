@@ -2,15 +2,17 @@
 
 using namespace std;  
 
+typedef void (*Fun)(const char* str);
+
 void Print(const char* str)   
 {
     cout<<"holle "<<str<<endl;   
 }
 
-template<typename  _Fun>
-void CallBackFun(void(*_Fun)(const char*), const char* str)   
+// template<typename  _Fun>
+void CallBackFun(Fun f, const char* str)   
 {   
-    (*_Fun)(str);
+    f(str);
 }   
 
 int main()   
