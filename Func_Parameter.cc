@@ -8,9 +8,9 @@ void Print(const char* str)
 }
 
 template<typename  Fun>
-void CallBackFun(void(*Fun)(const char* str), const char* str)   
+void CallBackFun(void(*Fun)(const char*), const char* str)   
 {   
-    (*Fun)(str);   
+    (*Fun)(str);
 }   
 
 int main()   
