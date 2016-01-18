@@ -9,7 +9,7 @@ class MyClass
     {
         cout<<"hello world"<<endl;   
     }
-}
+};
 
 template<class T>
 void CallBackFun(T* ptr,void(T::*MenFn)())   
