@@ -1,19 +1,20 @@
 #include <iostream>
-using namespace std;  
+#include <functional>
+using namespace std;
 
-void Print()   
+void Print(const char* str)   
 {
-    cout<<"hello world"<<endl;   
+    cout<<"hello "<<str<<endl;   
 }
 
-template<class T>
-void CallBackFun(void(*T)())   
+template<class _Fun>   
+void CallBackFun(_Fun f,const char* str)   
 {   
-    (*T)(); 
+    f(str);   
 }   
 
 int main()   
 {
-    CallBackFun(&Print);
+    CallBackFun(Print, "world");
     return  0;
 }   
