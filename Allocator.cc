@@ -26,5 +26,6 @@ int main()
 	// 拷贝和填充未初始化内存的算法
 	auto p = alloc.allocate(vi.size() * 2);
 	auto q = uninitialized_copy(vi.begin(), vi.end(), p);
-	
+	// 将剩余元素初始化为42
+	uninitialized_fill_n(q, vi.size(), 42);
 }
