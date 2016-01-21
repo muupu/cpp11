@@ -8,7 +8,7 @@ template <typename T>
 class Test
 {
 public:
-	static bool func(const T &t)
+    static bool func(const T &t)
 	{
 		cout << t << endl;
 		return true;
@@ -16,7 +16,7 @@ public:
 };
 
 template <typename T, typename TAllocator, template <typename, typename> class TContainer>
-class Test<TContainer<T, TAllocator> >
+class Test<TContainer<T, TAllocator>>
 {
 public:
 	static bool func(const TContainer<T, TAllocator> &t)
