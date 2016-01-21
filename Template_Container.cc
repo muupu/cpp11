@@ -21,8 +21,8 @@ class Test<TContainer<T, TAllocator> >
 public:
 	static bool func(const TContainer<T, TAllocator> &t)
 	{
-		TContainer<T, TAllocator>::const_iterator iter;
-		for (iter = t.begin(); iter != t.end(); ++iter)
+		// TContainer<T, TAllocator>::const_iterator iter;
+		for (auto iter = t.begin(); iter != t.end(); ++iter)
 		{
 			cout << *iter << " ";
 		}
