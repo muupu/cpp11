@@ -16,7 +16,7 @@ public:
 };
 
 template <class T, class TAllocator, template <typename, typename> class TContainer>
-class Test<TContainer<T, TAllocator>>
+class Test<TContainer<T, TAllocator> >
 {
 public:
 	static bool func(const TContainer<T, TAllocator> &t)
