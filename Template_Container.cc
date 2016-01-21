@@ -4,7 +4,7 @@
 
 using namespace std;
 
-template <class T>
+template <typename T>
 class Test
 {
 public:
@@ -15,7 +15,7 @@ public:
 	}
 };
 
-template <class T, class TAllocator, template <typename, typename> class TContainer>
+template <typename T, typename TAllocator, template <typename, typename> class TContainer>
 class Test<TContainer<T, TAllocator> >
 {
 public:
