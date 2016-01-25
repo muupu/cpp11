@@ -23,3 +23,20 @@ private:
     std::string _name;
 };
 
+class HelloDecorator :public IHello
+{
+public:
+    HelloDecorator(IHello* hello):_hello(hello){
+
+    }
+    
+    void show() { 
+    	_hello->show();
+    }
+
+private:
+    IHello* _hello;
+    virtual void addDecorator() = 0;
+};
+
+
