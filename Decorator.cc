@@ -49,12 +49,30 @@ public:
     HelloDecoratorA(IHello* hello):HelloDecorator(hello){
 
     }
-    
+
     void show()
     {
         addDecorator();
         HelloDecorator::show();
     }
+};
+
+class HelloDecoratorB :public HelloDecorator
+{
+private:
+    void addDecorator() { 
+    	std::cout << "logging out ..." << std::endl;
+    }
+public:
+    HelloDecoratorB(IHello* hello):_hello(hello){
+
+    }
+    
+    void show() 
+    {
+        HelloDecorator::show();
+        addDecorator();
+    }   
 };
 
 
