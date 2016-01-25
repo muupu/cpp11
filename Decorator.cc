@@ -29,7 +29,7 @@ public:
     HelloDecorator(IHello* hello):_hello(hello){
 
     }
-    
+
     void show() { 
     	_hello->show();
     }
@@ -37,6 +37,24 @@ public:
 private:
     IHello* _hello;
     virtual void addDecorator() = 0;
+};
+
+class HelloDecoratorA :public HelloDecorator
+{
+private:
+    void addDecorator() { 
+    	std::cout << "logging in ..." << std::endl;
+    }
+public:
+    HelloDecoratorA(IHello* hello):HelloDecorator(hello){
+
+    }
+    
+    void show()
+    {
+        addDecorator();
+        HelloDecorator::show();
+    }
 };
 
 
