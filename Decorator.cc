@@ -67,7 +67,7 @@ public:
     HelloDecoratorB(IHello* hello):_hello(hello){
 
     }
-    
+
     void show() 
     {
         HelloDecorator::show();
@@ -75,4 +75,16 @@ public:
     }   
 };
 
-
+int main(int, char**)
+{
+// http://bluereader.org/article/113234521
+// shard_ptr<IHello>统一使用基类智能指针，进行堆对象的管理
+    std::shared_ptr<IHello> hello(new Hello("Inside Zhang"));
+    std::shared_ptr<IHello> helloA(new HelloDecoratorA(hello.get()));
+    std::shared_ptr<IHello> helloB(new HelloDecoratorB(hello.get()));
+    std::shared_ptr<IHello> helloAB(new HelloDecoratorB(helloA.get()));
+//  helloA->show();
+//  helloB->show();
+    helloAB->show();
+    return 0;
+}
