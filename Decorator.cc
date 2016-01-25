@@ -1,3 +1,5 @@
+#include <string>
+#include <memory>
 
 class IHello
 {
@@ -9,10 +11,15 @@ public:
 
 class Hello :public IHello
 {
+public:
+    Hello(const std::string& name):_name(name){
+    }
+
+    void show() { 
+    	std::cout << "hello " + _name << std::endl;
+    }
+
 private:
     std::string _name;
-public:
-    Hello(const std::string& name):_name(name){}
-    void show() { std::cout << "hello " + _name << std::endl;}
 };
 
