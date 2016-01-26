@@ -8,7 +8,7 @@ class A
 public:
 	A()
 	{ }
-    ~A()
+    virtual ~A()
     {cout<<"~A"<<endl; }
     
 public:
