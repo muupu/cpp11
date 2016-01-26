@@ -27,7 +27,12 @@ public:
 
 };
 
-
+int main()
+{
+	A *pA = new B();
+	delete pA;
+	cout<<"Finish"<<endl;
+}
 
 
 
