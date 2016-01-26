@@ -6,9 +6,11 @@ using namespace std;
 class A
 {
 public:
-
 	A()
 	{ }
+    ~A()
+    {cout<<"~A"<<endl; }
+    
 public:
 	virtual int TestA() = 0;
 };
