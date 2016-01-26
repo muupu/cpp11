@@ -7,7 +7,10 @@ private:
         int b_number;
 public:
         Base( ){}
-        Base(int i) : b_number (i) { }
+        Base(int i) : b_number (i) { 
+            cout << "constructor in base:" << " ";        
+            print( );
+        }
         int get_number( ) {return b_number;}
         void print( ) {cout << b_number << endl;}        
 };
@@ -40,3 +43,8 @@ int main( )
         b.Base::print( );                // print( ) in Base
         return 0;
 }
+
+// output:
+// a is 2
+// b is 3 4
+// base part of b is 3
