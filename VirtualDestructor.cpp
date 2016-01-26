@@ -3,6 +3,16 @@
 
 using namespace std;
 
+class A
+{
+public:
+
+	A()
+	{ }
+public:
+	virtual int TestA() = 0;
+};
+
 
 
 
