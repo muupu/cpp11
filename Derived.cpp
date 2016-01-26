@@ -25,3 +25,16 @@ public:
                 cout << d_number << endl;
         }
 };
+
+int main( )
+{
+        Base a(2);
+        Derived b(3, 4);
+        cout << "a is ";
+        a.print( );                // print( ) in Base
+        cout << "b is ";
+        b.print( );                // print( ) in Derived
+        cout << "base part of b is "; 
+        b.Base::print( );                // print( ) in Base
+        return 0;
+}
