@@ -13,6 +13,21 @@ public:
 	virtual int TestA() = 0;
 };
 
+class B : public A
+{
+public:
+	B()
+	{ }
+
+	virtual ~B()
+	{ cout<<"~B"<<endl; }
+
+	virtual int TestA()
+	{ return 100; }
+
+};
+
+
 
 
 
