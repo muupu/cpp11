@@ -10,9 +10,11 @@ using namespace std;
 void RemoveAllChar()
 {
 	string str="asdfasf.asfdasdfsa.afssdfsda.asfdsdafa.";
+	cout << str << '\n';
 	char c = '.';
 	string::iterator new_end = remove_if(str.begin(), str.end(), bind2nd(equal_to<char>(),c));
     str.erase(new_end, str.end());
+    cout << str << '\n';
 }
 
 
@@ -37,6 +39,7 @@ void Test_Replace()
 
 int main()
 {
-	Test_Replace();
+	// Test_Replace();
+	RemoveAllChar()
 	return 0;
 }
