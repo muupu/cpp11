@@ -10,6 +10,11 @@ void Test_Replace()
 	// Using positions
 	str.replace(9,5,str2);          // "this is an example string." (1)
 	std::cout << str << '\n';
+	// Using iterators
+	str.replace(str.begin(),str.begin()+6,"replace");  
+	std::cout << str << '\n';
+	str.replace(str.begin(),str.begin()+6,"");  
+	std::cout << str << '\n';
 }
 
 int main()
