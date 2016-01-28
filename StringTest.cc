@@ -9,7 +9,7 @@ using namespace std;
 // bind2nd/remove_if/equal_to/string.erase
 void RemoveAllChar()
 {
-	string tmp="asdfasf.asfdasdfsa.afssdfsda.asfdsdafa.";
+	string str="asdfasf.asfdasdfsa.afssdfsda.asfdsdafa.";
 	char c = '.';
 	string::iterator new_end = remove_if(str.begin(), str.end(), bind2nd(equal_to<char>(),c));
     str.erase(new_end, str.end());
