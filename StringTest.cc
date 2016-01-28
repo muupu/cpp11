@@ -7,7 +7,7 @@ using namespace std;
 
 // 将指定字符删除 
 // bind2nd/remove_if/equal_to/string.erase
-void removeAllChar()
+void RemoveAllChar()
 {
 	string tmp="asdfasf.asfdasdfsa.afssdfsda.asfdsdafa.";
 	char c = '.';
