@@ -9,12 +9,14 @@ void Test_Replace()
 	string str2="n example";
 	// Using positions
 	str.replace(9,5,str2);          // "this is an example string." (1)
-	std::cout << str << '\n';
+	cout << str << '\n';
 	// Using iterators
 	str.replace(str.begin(),str.begin()+6,"replace");  
-	std::cout << str << '\n';
+	cout << str << '\n';            // "replaces an example string."
 	str.replace(str.begin(),str.begin()+6,"");  
-	std::cout << str << '\n';
+	cout << str << '\n';            // "es an example string."
+
+
 }
 
 int main()
