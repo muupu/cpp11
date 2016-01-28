@@ -15,7 +15,9 @@ void Test_Replace()
 	cout << str << '\n';            // "replaces an example string."
 	str.replace(str.begin(),str.begin()+6,"");  
 	cout << str << '\n';            // "es an example string."
-
+	// replace the first finded string
+	// std::size_t found = str.find(str2);
+	str.replace(str.find(str2),str2.length(),"");
 
 }
 
