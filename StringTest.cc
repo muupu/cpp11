@@ -1,7 +1,20 @@
 #include <iostream>
 #include <string>
+#include <functional> // bind2nd/equal_to
+#include <algorithm> // remove_if
 
 using namespace std;
+
+// 将指定字符删除 
+// bind2nd/remove_if/equal_to/string.erase
+void removeAllChar()
+{
+	string tmp="asdfasf.asfdasdfsa.afssdfsda.asfdsdafa.";
+	char c = '.';
+	string::iterator new_end = remove_if(str.begin(), str.end(), bind2nd(equal_to<char>(),c));
+    str.erase(new_end, str.end());
+}
+
 
 void Test_Replace()
 {
@@ -18,7 +31,7 @@ void Test_Replace()
 	// replace the first finded string
 	// std::size_t found = str.find(str2);
 	str.replace(str.find(str2),str2.length(),"");
-	cout << str << '\n'; 
+	cout << str << '\n';            // "es a string."
 
 }
 
