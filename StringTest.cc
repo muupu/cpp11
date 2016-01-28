@@ -18,6 +18,7 @@ void Test_Replace()
 	// replace the first finded string
 	// std::size_t found = str.find(str2);
 	str.replace(str.find(str2),str2.length(),"");
+	cout << str << '\n'; 
 
 }
 
