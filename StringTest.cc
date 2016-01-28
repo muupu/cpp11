@@ -40,6 +40,6 @@ void Test_Replace()
 int main()
 {
 	// Test_Replace();
-	RemoveAllChar()
+	RemoveAllChar();
 	return 0;
 }
