@@ -1,11 +1,20 @@
 #include <ifstream>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 void runQueries(ifstream &infile)
 {
-
+	TextQuery tq(infile);
+	string word;
+	while(cin >> word && word != "q")
+	{
+		cout << tq.query(word) << endl;
+	}
 }
 
 int main()
 {
-
+	
 }
