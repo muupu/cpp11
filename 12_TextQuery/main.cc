@@ -16,5 +16,7 @@ void runQueries(ifstream &infile)
 
 int main()
 {
-	
+	ifstream file("text.txt");
+	runQueries(file);
+	file.close();
 }
