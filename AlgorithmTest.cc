@@ -7,6 +7,7 @@
 using namespace std;
 
 /***  Sorting operations (on sorted ranges) ***/
+bool greater(int i,int j) { return (i>j); }
 
 // std::partial_sort
 
