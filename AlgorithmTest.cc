@@ -8,6 +8,9 @@ using namespace std;
 
 /***  Sorting operations (on sorted ranges) ***/
 // std::nth_element
+// 对给定范围[first,last)内的元素进行重新布置.
+// 方法是,nth位置的元素放置的值就是把所有元素排序后在nth位置的值.
+// 把所有不大于nth的值放到nth的前面,把所有不小于nth的值放到nth后面.
 void test_nth_element()
 {
 	// array
@@ -16,6 +19,7 @@ void test_nth_element()
 	cout << "The fourth element is: " << a[3] << endl; 
 	// output array a[]
   	copy(a, a+sizeof(a)/sizeof(int), ostream_iterator<int>(cout, " "));
+  	cout << endl;
 
 	// vector
 	std::vector<int> v{5, 6, 4, 3, 2, 6, 7, 9, 3};
