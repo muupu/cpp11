@@ -7,7 +7,7 @@
 using namespace std;
 
 /***  Sorting operations (on sorted ranges) ***/
-bool greater(int i,int j) { return (i>j); }
+bool mygreater(int i,int j) { return (i>j); }
 
 // std::partial_sort
 
@@ -22,7 +22,7 @@ void test_partial_sort()
     } 
     cout << endl;
     // using function as comp
-  	std::partial_sort(s.begin(), s.begin() + 5, s.end(), greater);
+  	std::partial_sort(s.begin(), s.begin() + 5, s.end(), mygreater);
   	for (int a : s) {
         std::cout << a << " ";
     }
