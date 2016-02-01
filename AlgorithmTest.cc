@@ -2,13 +2,22 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
- 
+#include <iterator>
 
+using namespace std;
 
 /***  Sorting operations (on sorted ranges) ***/
 // std::nth_element
 void test_nth_element()
 {
+	// array
+	int a[]={3,5,2,6,1,4};
+	std::nth_element(a, a+3, a+sizeof(a)/sizeof(int));
+	cout << "The fourth element is: " << a[3] << endl; 
+	// output array a[]
+  	copy(a, a+sizeof(a)/sizeof(int), ostream_iterator<int>(cout, " "));
+
+	// vector
 	std::vector<int> v{5, 6, 4, 3, 2, 6, 7, 9, 3};
  
     std::nth_element(v.begin(), v.begin() + v.size()/2, v.end());
@@ -20,7 +29,7 @@ void test_nth_element()
 
 int main()
 {
-	
+
 	/***  Sorting operations (on sorted ranges) ***/
     test_nth_element();
 }
