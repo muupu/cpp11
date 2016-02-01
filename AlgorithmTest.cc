@@ -10,7 +10,7 @@ using namespace std;
 bool mygreater(int i,int j) { return (i>j); }
 
 // std::partial_sort
-
+// 采用堆排序
 void test_partial_sort()
 {
 	std::array<int, 10> s{5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
@@ -22,7 +22,17 @@ void test_partial_sort()
     } 
     cout << endl;
     // using function as comp
-  	std::partial_sort(s.begin(), s.begin() + 5, s.end(), mygreater);
+  	// std::partial_sort(s.begin(), s.begin() + 5, s.end(), mygreater);
+  	// for (int a : s) {
+   //      std::cout << a << " ";
+   //  }
+   //  cout << endl;
+    
+    // using lambda function as comp
+  	std::partial_sort(s.begin(), s.begin() + 5, s.end(), 
+  		[](int a, int b) {
+            return (a > b);
+        });
   	for (int a : s) {
         std::cout << a << " ";
     }
