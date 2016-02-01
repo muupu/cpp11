@@ -7,6 +7,19 @@
 using namespace std;
 
 /***  Sorting operations (on sorted ranges) ***/
+
+// std::partial_sort
+
+void test_partial_sort()
+{
+	std::array<int, 10> s{5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
+ 
+    std::partial_sort(s.begin(), s.begin() + 3, s.end());
+    for (int a : s) {
+        std::cout << a << " ";
+    } 
+}
+
 // std::nth_element
 // 对给定范围[first,last)内的元素进行重新布置.
 // 方法是,nth位置的元素放置的值就是把所有元素排序后在nth位置的值.
