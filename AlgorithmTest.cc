@@ -15,10 +15,18 @@ void test_partial_sort()
 {
 	std::array<int, 10> s{5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
  
+ 	// using default comparison (operator <):
     std::partial_sort(s.begin(), s.begin() + 5, s.end());
     for (int a : s) {
         std::cout << a << " ";
     } 
+    cout << endl;
+    // using function as comp
+  	std::partial_sort(s.begin(), s.begin() + 5, s.end(), greater);
+  	for (int a : s) {
+        std::cout << a << " ";
+    }
+    cout << endl;
 }
 
 // std::nth_element
