@@ -48,5 +48,6 @@ int main()
 {
 
 	/***  Sorting operations (on sorted ranges) ***/
-    test_nth_element();
+	test_partial_sort();
+    // test_nth_element();
 }
