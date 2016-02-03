@@ -22,3 +22,8 @@ private:
 	map<string, shared_ptr<set<line_no>>> wm;
 	
 };
+
+TextQuery::TextQuery(ifstream &is): file(new vector<string>)
+{
+	string text;
+}
