@@ -29,13 +29,13 @@ TextQuery::TextQuery(ifstream &is): file(new vector<string>)
 	while (getline(is, text))
 	{
 		file->push_back(text);
-		int n = file->size() - 1;
-		istringstream line(text);
+		int n = file->size() - 1; // 当前行号
+		istringstream line(text); // 将行文本分解为单词
 		string word;
 		while (line >> word) {
-			auto &lines = wm[word];
+			auto &lines = wm[word]; // lines是个shared_ptr指针的引用
 			if (!lines)
-				lines.reset(new set<line_no>);
+				lines.reset(new set<line_no>); // reset: 分配一个新的set
 			lines->insert(n);
 		}
 	}
