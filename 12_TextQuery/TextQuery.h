@@ -40,3 +40,9 @@ TextQuery::TextQuery(ifstream &is): file(new vector<string>)
 		}
 	}
 }
+
+QueryResult
+TextQuery::query(const string &sought) const
+{
+	
+}
