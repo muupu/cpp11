@@ -5,6 +5,7 @@
 #include <set>
 #include <memory>
 #include <sstream>
+#include "QueryResult.h"
 
 using namespace std;
 
