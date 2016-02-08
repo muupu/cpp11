@@ -1,3 +1,6 @@
+#ifndef QUERYRESULT_H_
+#define QUERYRESULT_H_
+
 #include <string>
 #include <memory>
 #include <vector>
@@ -38,3 +41,4 @@ ostream &print(ostream & os, const QueryResult &qr)
 	return os;
 }
 
+#endif

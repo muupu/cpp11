@@ -1,4 +1,7 @@
 
+#ifndef TEXTQUERY_H_
+#define TEXTQUERY_H_
+
 #include <fstream>
 #include <string>
 #include <vector>
@@ -25,3 +28,4 @@ private:
 	
 };
 
+#endif
