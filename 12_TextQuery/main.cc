@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include "TextQuery.h"
+#include "QueryResult.h"
 
 using namespace std;
 
