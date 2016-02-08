@@ -12,7 +12,7 @@ void runQueries(ifstream &infile)
 	while(cin >> word && word != "q")
 	{
 		//cout << tq.query(word) << endl;
-		print(cout, tq.query(s)) << endl;
+		print(cout, tq.query(word)) << endl;
 	}
 }
 
