@@ -4,6 +4,7 @@
 #include <map>
 #include <set>
 #include <memory>
+#include <sstream>
 
 using namespace std;
 
