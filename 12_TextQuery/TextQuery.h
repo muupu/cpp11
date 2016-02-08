@@ -9,7 +9,6 @@
 
 using namespace std;
 
-class QueryResult;
 class TextQuery
 {
 public:
