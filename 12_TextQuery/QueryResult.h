@@ -14,7 +14,7 @@ class QueryResult
 friend std::ostream& print(std::ostream&, const QueryResult&);
 
 public:
-	using line_no = vector<string>::size_type;
+	//using line_no = vector<string>::size_type;
 	QueryResult(string s, 
 		        shared_ptr<set<int>> p,
 		        shared_ptr<vector<string>> f): sought(s), lines(p), file(f) { };
