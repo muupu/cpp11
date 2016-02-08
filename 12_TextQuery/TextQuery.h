@@ -12,7 +12,7 @@ using namespace std;
 class TextQuery
 {
 public:
-	using line_no = vector<string>::size_type;
+	// using line_no = vector<string>::size_type;
 	TextQuery(ifstream&);
 	~TextQuery();
 	QueryResult query(const string&) const;
@@ -20,7 +20,7 @@ public:
 private:
 	shared_ptr<vector<string>> file;
 	// 每个单词到它所在的行号的集合的映射
-	map<string, shared_ptr<set<line_no>>> wm;
+	map<string, shared_ptr<set<int>>> wm;
 	
 };
 
@@ -36,7 +36,7 @@ TextQuery::TextQuery(ifstream &is): file(new vector<string>)
 		while (line >> word) {
 			auto &lines = wm[word]; // lines是个shared_ptr指针的引用
 			if (!lines)
-				lines.reset(new set<line_no>); // reset: 分配一个新的set
+				lines.reset(new set<int>); // reset: 分配一个新的set
 			lines->insert(n);
 		}
 	}
@@ -45,7 +45,7 @@ TextQuery::TextQuery(ifstream &is): file(new vector<string>)
 QueryResult
 TextQuery::query(const string &sought) const
 {
-	static shared_ptr<set<line_no>> nodata(new set<line_no>);
+	static shared_ptr<set<int>> nodata(new set<int>);
 	auto loc = wm.find(sought);
 	if (loc == wm.end())
 	{
