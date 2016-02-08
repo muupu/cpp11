@@ -1,6 +1,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "TextQuery.h"
 
 using namespace std;
 
