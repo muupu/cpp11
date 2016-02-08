@@ -10,7 +10,8 @@ void runQueries(ifstream &infile)
 	string word;
 	while(cin >> word && word != "q")
 	{
-		cout << tq.query(word) << endl;
+		//cout << tq.query(word) << endl;
+		print(cout, tq.query(s)) << endl;
 	}
 }
 
