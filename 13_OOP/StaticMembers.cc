@@ -12,6 +12,10 @@ public:
 class Derived : public Base {
 public:
 	void f( const Derived&);
+	void statemen()
+	{
+		cout << "Derived statemen" << endl;
+	}
 };
 
 void Derived::f(const Derived &derived_obj)
