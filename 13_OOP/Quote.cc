@@ -17,6 +17,18 @@ protected:
 	double price = 0.0;
 };
 
+class Disc_quote : public Quote {
+public:
+	Disc_quote() = default;
+	Disc_quote(const std::string& book, double price, std::size_t qty, double disc):
+		Quote(book, price), quantitiy(qty), discount(disc) { }
+	double net_price(std::size_t) const = 0; // 纯虚函数
+
+protected:
+	std::size_t quantitiy = 0;
+	double discount = 0.0;
+};
+
 class Bulk_quote : public Quote {
 public:
 	Bulk_quote() = default;
