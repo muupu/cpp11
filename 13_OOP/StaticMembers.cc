@@ -12,7 +12,7 @@ public:
 class Derived : public Base {
 public:
 	void f( const Derived&);
-	void statemen()
+	static void statemen()  // 添加了这个，Derived::statemen()会输出：Derived statemen
 	{
 		cout << "Derived statemen" << endl;
 	}
