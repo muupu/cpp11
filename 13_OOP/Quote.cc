@@ -8,6 +8,7 @@ public:
 	std::string isbn() const { return bookNo; }
 	virtual double net_price(std::size_t n) const
 		{ return n * price;}
+	// 基类的析构函数通常都应该添加virtual声明
 	virtual ~Quote() = default; // 对析构函数进行动态绑定
 
 private:
