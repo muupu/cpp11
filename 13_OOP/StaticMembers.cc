@@ -12,10 +12,10 @@ public:
 class Derived : public Base {
 public:
 	void f( const Derived&);
-	static void statemen()  // 添加了这个(不管有没有static)，Derived::statemen()都会输出：Derived statemen
+	/*static void statemen()  // 添加了这个(不管有没有static)，Derived::statemen()都会输出：Derived statemen
 	{
 		cout << "Derived statemen" << endl;
-	}
+	}*/
 };
 
 void Derived::f(const Derived &derived_obj)
