@@ -3,13 +3,14 @@ using namespace std;
 
 class Base {
 public:
-	static void statemen();
+	static void statemen()
 	{
 		cout << "Base statemen" << endl;
 	}
 };
 
 class Derived : public Base {
+public:
 	void f( const Derived&);
 };
 
