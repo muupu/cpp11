@@ -1,7 +1,7 @@
 #include <iostream>
 
 // 派生类的成员或友元只能通过派生类对象来访问基类的受保护成员
-// 
+
 class Base {
 protected:
 	int prot_mem;
