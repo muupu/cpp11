@@ -25,7 +25,7 @@ private:
 	{
 		{
 			std::unique_lock<std::mutex> ul(mutex_);
-			while (0 == flag_) {
+			while (0 == flag_) { // 不能写成if (0 == flag_)，因为在多核CPU下会存在虚假唤醒（ spurious wakes）的情况。
 				cond_.wait(ul); //线程1需要等到线程2将flag设置为非0才进行打印
 			}
 			std::cout << "threadFunc1: " << flag_ << std::endl;
@@ -42,7 +42,7 @@ private:
 	}
 
 	int flag_;
-	std::mutex mutex_;
+	std::mutex mutex_; // 类成员变量定义的顺序，mutex和cond必须在thread的前面
 	std::condition_variable cond_;
 	std::thread thread1_;
 	std::thread thread2_;
