@@ -26,9 +26,9 @@ private:
 		{
 			std::unique_lock<std::mutex> ul(mutex_);
 			while (0 == flag_) {
-				cond_.wait(ul);
+				cond_.wait(ul); //线程1需要等到线程2将flag设置为非0才进行打印
 			}
-			std::cout << flag_ << std::endl;
+			std::cout << "threadFunc1: " << flag_ << std::endl;
 		}
 	}
 
