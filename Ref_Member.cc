@@ -6,22 +6,31 @@ using namespace std;
 class Test
 {
 private:
-    int &a;
+    int& a_;
+    const int& b_;
 public:
-    Test(int &b) : a(b) // 引用类型的成员变量必须在构造函数的初始化列表中进行初始化
+    Test(int& a, int& b) : a_(a), b_(b) // 引用类型的成员变量必须在构造函数的初始化列表中进行初始化
     {
     }
     void Modify(int value)
     {
-        a = value;
+        a_ = value;
+        // b_ = value; // 不能修改const变量
     }
+    void Print()
+    {
+        cout << "b_=" << b_ << endl;
+    }
+
 };
 int main()
 {
-    int b = 3;
-    Test test(b);
-    cout <<"b="<<b<<endl;  // b=3
+    int a = 3;
+    int b = 5;
+    Test test(a, b);
+    cout <<"a=" << a << " b="<< b << endl;  // a=3
     test.Modify(4);
-    cout <<"b="<<b<<endl;  // b=4
+    test.Print();
+    cout <<"a=" << a << " b="<< b << endl;  //  a=4
     return 0;
 }
