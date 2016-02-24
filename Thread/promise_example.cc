@@ -5,7 +5,7 @@
 
 void print_int(std::future<int>& fut) {
   int x = fut.get();
-  std::cout << "value: " << x << '\n';
+  std::cout << "value: " << x << '\n'; //value: 10
 }
 
 int main ()
