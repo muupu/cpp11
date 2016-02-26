@@ -58,9 +58,30 @@ void test_pointer()
 	}
 }
 
+void test_pointer2()
+{
+	autonavi::vector<TestClass*> vecPtr;
+	TestClass *a = new TestClass;
+	TestClass *b = new TestClass;
+	TestClass *c = new TestClass;
+	vecPtr.push_back(a);
+	vecPtr.push_back(b);
+	vecPtr.push_back(c);
+	autonavi::vector<TestClass*>::iterator it = vecPtr.begin();
+	for (; it != vecPtr.end();)
+	{
+		//vecPtr.erase(it++);
+		delete *it;
+		*it = NULL;
+		it = vecPtr.erase(it);
+		
+	}
+}
+
 int main()
 {
 	test_object();
 	test_pointer();
+	test_pointer2()
 	return 0;
 }
