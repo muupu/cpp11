@@ -78,10 +78,34 @@ void test_pointer2()
 	}
 }
 
+void test_pointer3()
+{
+	std::vector<TestClass*> vecPtr;
+	TestClass *a = new TestClass;
+	TestClass *b = new TestClass;
+	TestClass *c = new TestClass;
+	vecPtr.push_back(a);
+	vecPtr.push_back(b);
+	vecPtr.push_back(c);
+	std::vector<TestClass*>::iterator it = vecPtr.begin();
+	for (; it != vecPtr.end(); it++)
+	{
+        if (*it != NULL)
+        {
+            delete *it;
+		    *it = NULL;
+		    //it = vecPtr.erase(it);
+		    //vecPtr.erase(it++);
+        }
+	}
+	vecPtr.clear();
+}
+
 int main()
 {
 	test_object();
 	test_pointer();
-	test_pointer2()
+	test_pointer2();
+	test_pointer3();
 	return 0;
 }
