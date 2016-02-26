@@ -124,6 +124,29 @@ void test_pointer4()
 	vecPtr.clear();
 }
 
+void test_pointer5()
+{
+	TestClass *a = new TestClass;
+	TestClass *b = new TestClass(*a);
+	TestClass *c = new TestClass(*a);
+
+	printf("----------/n");
+
+	std::vector<TestClass*> vec;
+	//vec.reserve(3);
+	vec.push_back(a);
+	vec.push_back(b);
+	vec.push_back(c);
+
+	std::vector<TestClass*>::iterator iter = vec.begin();
+	for (; iter != vec.end(); ++iter)
+	{
+		delete *iter;   //*iter = a , b, c  
+	}
+
+	vec.clear();
+}
+
 int main()
 {
 	test_object();
@@ -131,5 +154,6 @@ int main()
 	test_pointer2();
 	test_pointer3();
 	test_pointer4();
+	test_pointer5();
 	return 0;
 }
