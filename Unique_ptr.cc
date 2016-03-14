@@ -68,7 +68,7 @@ void unique_ptr_no_copy_assign()
 	std::cout << "p2 points to " << *p2 << '\n';
 }
 
-void test_reset()
+void test_reset1()
 {
 	std::unique_ptr<int> up;  // empty
 
@@ -83,11 +83,43 @@ void test_reset()
 	up.reset();               // deletes managed object
 }
 
+class TestObject
+{
+public:
+    TestObject()
+    {
+        std::cout << "TestObject()" << '\n';
+    }
+    
+    ~TestObject()
+    {
+        std::cout << "~TestObject()" << '\n';
+    }
+};
+
+void test_reset2()
+{
+	std::unique_ptr<TestObject> up;  // empty
+
+	up.reset (new TestObject());  // takes ownership of pointer
+
+	up.reset (new TestObject());  // deletes managed object, acquires new pointer
+
+	up.reset();               // deletes managed object
+
+	// output:
+	// TestObject()
+	// TestObject()
+	// ~TestObject()
+	// ~TestObject()
+}
+
 int main () 
 {
 	unique_ptr_constructor_example();
 	unique_ptr_release_example();
 	unique_ptr_no_copy_assign();
-	test_reset();
+	test_reset1();
+	test_reset1();
 	return 0;
 }
