@@ -68,10 +68,26 @@ void unique_ptr_no_copy_assign()
 	std::cout << "p2 points to " << *p2 << '\n';
 }
 
+void test_reset()
+{
+	std::unique_ptr<int> up;  // empty
+
+	up.reset (new int);       // takes ownership of pointer
+	*up=5;
+	std::cout << *up << '\n';
+
+	up.reset (new int);       // deletes managed object, acquires new pointer
+	*up=10;
+	std::cout << *up << '\n';
+
+	up.reset();               // deletes managed object
+}
+
 int main () 
 {
 	unique_ptr_constructor_example();
 	unique_ptr_release_example();
 	unique_ptr_no_copy_assign();
+	test_reset();
 	return 0;
 }
