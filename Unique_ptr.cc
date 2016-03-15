@@ -86,32 +86,50 @@ void test_reset1()
 class TestObject
 {
 public:
-    TestObject()
+    TestObject(std::string objname) : objname_(objname)
     {
-        std::cout << "TestObject()" << '\n';
+        std::cout << "TestObject():" << objname_ << '\n';
     }
     
     ~TestObject()
     {
-        std::cout << "~TestObject()" << '\n';
+        std::cout << "~TestObject()" << objname_  << '\n';
     }
+    
+    std::string objname_;
 };
 
 void test_reset2()
 {
 	std::unique_ptr<TestObject> up;  // empty
 
-	up.reset (new TestObject());  // takes ownership of pointer
+	std::cout << "new object1" << '\n';
+	TestObject* object1 = new TestObject("obj1");
+	std::cout << "reset" << '\n';
+	up.reset (object1);  // takes ownership of pointer
+	std::cout << '\n';
 
-	up.reset (new TestObject());  // deletes managed object, acquires new pointer
+	std::cout << "new object2" << '\n';
+	TestObject* object2 = new TestObject("obj2");
+	std::cout << "reset" << '\n';
+	up.reset (object2);  // deletes managed object, acquires new pointer
+	std::cout << '\n';
 
+	std::cout << "reset" << '\n';
 	up.reset();               // deletes managed object
 
 	// output:
-	// TestObject()
-	// TestObject()
-	// ~TestObject()
-	// ~TestObject()
+	// new object1
+	// TestObject():obj1
+	// reset
+
+	// new object2
+	// TestObject():obj2
+	// reset
+	// ~TestObject()obj1
+
+	// reset
+	// ~TestObject()obj2
 }
 
 int main () 
